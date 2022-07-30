@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D0637C862892708D00C33D4E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0637C852892708D00C33D4E /* CalendarView.swift */; };
+		D0637C882892897100C33D4E /* DateHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0637C872892897100C33D4E /* DateHolder.swift */; };
+		D0637C8C28928B5600C33D4E /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0637C8B28928B5600C33D4E /* CalendarHelper.swift */; };
+		D0637C8E2892B56F00C33D4E /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0637C8D2892B56F00C33D4E /* CalendarCell.swift */; };
+		D09418442895500B009373CF /* PraznikView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09418432895500B009373CF /* PraznikView.swift */; };
+		D0A1D206288BBAD400F029BC /* ManastirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D205288BBAD400F029BC /* ManastirView.swift */; };
+		D0A1D20C288BBE7E00F029BC /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D20B288BBE7E00F029BC /* DataController.swift */; };
+		D0A814B3288BCF40003E1CF2 /* CormorantSC-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0A814B2288BCF40003E1CF2 /* CormorantSC-Medium.ttf */; };
+		D0A814B5288BD2EB003E1CF2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A814B4288BD2EB003E1CF2 /* HomeView.swift */; };
+		D0A814B7288BD4C8003E1CF2 /* CormorantSC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0A814B6288BD4C8003E1CF2 /* CormorantSC-Bold.ttf */; };
+		D0A814B9288BD57F003E1CF2 /* ManastirListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A814B8288BD57F003E1CF2 /* ManastirListView.swift */; };
+		D0A814BF288BDD85003E1CF2 /* Pravoslavlje.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D0A814BE288BDD84003E1CF2 /* Pravoslavlje.sqlite */; };
+		D0A814C2288BDE2C003E1CF2 /* Pravoslavlje.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = D0A814C0288BDE2C003E1CF2 /* Pravoslavlje.sqlite-wal */; };
+		D0A814C3288BDE2C003E1CF2 /* Pravoslavlje.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = D0A814C1288BDE2C003E1CF2 /* Pravoslavlje.sqlite-shm */; };
+		D0BF332E28893062005AD934 /* PravoslavljeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BF332D28893062005AD934 /* PravoslavljeApp.swift */; };
+		D0BF333028893062005AD934 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BF332F28893062005AD934 /* ContentView.swift */; };
+		D0BF333228893072005AD934 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0BF333128893072005AD934 /* Assets.xcassets */; };
+		D0BF333528893072005AD934 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0BF333428893072005AD934 /* Preview Assets.xcassets */; };
+		D0BF333A28893072005AD934 /* Pravoslavlje.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0BF333828893072005AD934 /* Pravoslavlje.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D0637C852892708D00C33D4E /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		D0637C872892897100C33D4E /* DateHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHolder.swift; sourceTree = "<group>"; };
+		D0637C8B28928B5600C33D4E /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		D0637C8D2892B56F00C33D4E /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		D09418432895500B009373CF /* PraznikView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraznikView.swift; sourceTree = "<group>"; };
+		D0A1D204288BB5C400F029BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D0A1D205288BBAD400F029BC /* ManastirView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManastirView.swift; sourceTree = "<group>"; };
+		D0A1D20B288BBE7E00F029BC /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		D0A814B2288BCF40003E1CF2 /* CormorantSC-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantSC-Medium.ttf"; sourceTree = "<group>"; };
+		D0A814B4288BD2EB003E1CF2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D0A814B6288BD4C8003E1CF2 /* CormorantSC-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantSC-Bold.ttf"; sourceTree = "<group>"; };
+		D0A814B8288BD57F003E1CF2 /* ManastirListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManastirListView.swift; sourceTree = "<group>"; };
+		D0A814BE288BDD84003E1CF2 /* Pravoslavlje.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pravoslavlje.sqlite; sourceTree = "<group>"; };
+		D0A814C0288BDE2C003E1CF2 /* Pravoslavlje.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pravoslavlje.sqlite-wal"; sourceTree = "<group>"; };
+		D0A814C1288BDE2C003E1CF2 /* Pravoslavlje.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pravoslavlje.sqlite-shm"; sourceTree = "<group>"; };
+		D0BF332A28893062005AD934 /* Православље.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Православље.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0BF332D28893062005AD934 /* PravoslavljeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PravoslavljeApp.swift; sourceTree = "<group>"; };
+		D0BF332F28893062005AD934 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D0BF333128893072005AD934 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0BF333428893072005AD934 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D0BF333928893072005AD934 /* Pravoslavlje.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pravoslavlje.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0BF332728893062005AD934 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D0637C842892705700C33D4E /* Kalendar Tab */ = {
+			isa = PBXGroup;
+			children = (
+				D0637C852892708D00C33D4E /* CalendarView.swift */,
+				D0637C8D2892B56F00C33D4E /* CalendarCell.swift */,
+				D09418432895500B009373CF /* PraznikView.swift */,
+				D09418472895AE89009373CF /* Kalendar Support */,
+			);
+			path = "Kalendar Tab";
+			sourceTree = "<group>";
+		};
+		D09418472895AE89009373CF /* Kalendar Support */ = {
+			isa = PBXGroup;
+			children = (
+				D0637C8B28928B5600C33D4E /* CalendarHelper.swift */,
+				D0637C872892897100C33D4E /* DateHolder.swift */,
+			);
+			path = "Kalendar Support";
+			sourceTree = "<group>";
+		};
+		D0A1D207288BBB0D00F029BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0BF332F28893062005AD934 /* ContentView.swift */,
+				D0A814BA288BD612003E1CF2 /* Pocetna Tab */,
+				D0A814BB288BD61F003E1CF2 /* Manastir Tab */,
+				D0637C842892705700C33D4E /* Kalendar Tab */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D0A1D208288BBB2E00F029BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0BF333828893072005AD934 /* Pravoslavlje.xcdatamodeld */,
+				D0A1D20B288BBE7E00F029BC /* DataController.swift */,
+				D0A814C4288BDE33003E1CF2 /* SQLite Database */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0A814BA288BD612003E1CF2 /* Pocetna Tab */ = {
+			isa = PBXGroup;
+			children = (
+				D0A814B4288BD2EB003E1CF2 /* HomeView.swift */,
+			);
+			path = "Pocetna Tab";
+			sourceTree = "<group>";
+		};
+		D0A814BB288BD61F003E1CF2 /* Manastir Tab */ = {
+			isa = PBXGroup;
+			children = (
+				D0A814B8288BD57F003E1CF2 /* ManastirListView.swift */,
+				D0A1D205288BBAD400F029BC /* ManastirView.swift */,
+			);
+			path = "Manastir Tab";
+			sourceTree = "<group>";
+		};
+		D0A814C4288BDE33003E1CF2 /* SQLite Database */ = {
+			isa = PBXGroup;
+			children = (
+				D0A814BE288BDD84003E1CF2 /* Pravoslavlje.sqlite */,
+				D0A814C1288BDE2C003E1CF2 /* Pravoslavlje.sqlite-shm */,
+				D0A814C0288BDE2C003E1CF2 /* Pravoslavlje.sqlite-wal */,
+			);
+			path = "SQLite Database";
+			sourceTree = "<group>";
+		};
+		D0BF332128893062005AD934 = {
+			isa = PBXGroup;
+			children = (
+				D0BF332C28893062005AD934 /* Православље */,
+				D0BF332B28893062005AD934 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0BF332B28893062005AD934 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0BF332A28893062005AD934 /* Православље.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0BF332C28893062005AD934 /* Православље */ = {
+			isa = PBXGroup;
+			children = (
+				D0BF332D28893062005AD934 /* PravoslavljeApp.swift */,
+				D0A1D207288BBB0D00F029BC /* Views */,
+				D0BF333128893072005AD934 /* Assets.xcassets */,
+				D0A1D208288BBB2E00F029BC /* Model */,
+				D0BF333328893072005AD934 /* Preview Content */,
+				D0A1D204288BB5C400F029BC /* Info.plist */,
+				D0A814B2288BCF40003E1CF2 /* CormorantSC-Medium.ttf */,
+				D0A814B6288BD4C8003E1CF2 /* CormorantSC-Bold.ttf */,
+			);
+			path = "Православље";
+			sourceTree = "<group>";
+		};
+		D0BF333328893072005AD934 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D0BF333428893072005AD934 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0BF332928893062005AD934 /* Православље */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0BF333D28893072005AD934 /* Build configuration list for PBXNativeTarget "Православље" */;
+			buildPhases = (
+				D0BF332628893062005AD934 /* Sources */,
+				D0BF332728893062005AD934 /* Frameworks */,
+				D0BF332828893062005AD934 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Православље";
+			productName = Pravoslavlje;
+			productReference = D0BF332A28893062005AD934 /* Православље.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0BF332228893062005AD934 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					D0BF332928893062005AD934 = {
+						CreatedOnToolsVersion = 13.4;
+					};
+				};
+			};
+			buildConfigurationList = D0BF332528893062005AD934 /* Build configuration list for PBXProject "Православље" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0BF332128893062005AD934;
+			productRefGroup = D0BF332B28893062005AD934 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0BF332928893062005AD934 /* Православље */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0BF332828893062005AD934 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0A814B7288BD4C8003E1CF2 /* CormorantSC-Bold.ttf in Resources */,
+				D0A814C3288BDE2C003E1CF2 /* Pravoslavlje.sqlite-shm in Resources */,
+				D0BF333528893072005AD934 /* Preview Assets.xcassets in Resources */,
+				D0A814BF288BDD85003E1CF2 /* Pravoslavlje.sqlite in Resources */,
+				D0BF333228893072005AD934 /* Assets.xcassets in Resources */,
+				D0A814B3288BCF40003E1CF2 /* CormorantSC-Medium.ttf in Resources */,
+				D0A814C2288BDE2C003E1CF2 /* Pravoslavlje.sqlite-wal in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0BF332628893062005AD934 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0A1D20C288BBE7E00F029BC /* DataController.swift in Sources */,
+				D0BF333028893062005AD934 /* ContentView.swift in Sources */,
+				D0637C862892708D00C33D4E /* CalendarView.swift in Sources */,
+				D0A1D206288BBAD400F029BC /* ManastirView.swift in Sources */,
+				D0A814B5288BD2EB003E1CF2 /* HomeView.swift in Sources */,
+				D0A814B9288BD57F003E1CF2 /* ManastirListView.swift in Sources */,
+				D0637C8E2892B56F00C33D4E /* CalendarCell.swift in Sources */,
+				D0637C8C28928B5600C33D4E /* CalendarHelper.swift in Sources */,
+				D0BF333A28893072005AD934 /* Pravoslavlje.xcdatamodeld in Sources */,
+				D0637C882892897100C33D4E /* DateHolder.swift in Sources */,
+				D09418442895500B009373CF /* PraznikView.swift in Sources */,
+				D0BF332E28893062005AD934 /* PravoslavljeApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D0BF333B28893072005AD934 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D0BF333C28893072005AD934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0BF333E28893072005AD934 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Православље/Preview Content\"";
+				DEVELOPMENT_TEAM = 4L9MK9G9TT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Православље/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = veljkobazalac.Pravoslavlje;
+				PRODUCT_NAME = "Православље";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D0BF333F28893072005AD934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Православље/Preview Content\"";
+				DEVELOPMENT_TEAM = 4L9MK9G9TT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Православље/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = veljkobazalac.Pravoslavlje;
+				PRODUCT_NAME = "Православље";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0BF332528893062005AD934 /* Build configuration list for PBXProject "Православље" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0BF333B28893072005AD934 /* Debug */,
+				D0BF333C28893072005AD934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0BF333D28893072005AD934 /* Build configuration list for PBXNativeTarget "Православље" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0BF333E28893072005AD934 /* Debug */,
+				D0BF333F28893072005AD934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D0BF333828893072005AD934 /* Pravoslavlje.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D0BF333928893072005AD934 /* Pravoslavlje.xcdatamodel */,
+			);
+			currentVersion = D0BF333928893072005AD934 /* Pravoslavlje.xcdatamodel */;
+			path = Pravoslavlje.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D0BF332228893062005AD934 /* Project object */;
+}
