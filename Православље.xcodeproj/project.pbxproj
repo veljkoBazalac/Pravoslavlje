@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D03F37B5289A6C0F00064D4F /* Pravoslavlje.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D03F37B4289A6C0F00064D4F /* Pravoslavlje.sqlite */; };
 		D0637C862892708D00C33D4E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0637C852892708D00C33D4E /* CalendarView.swift */; };
 		D0637C882892897100C33D4E /* DateHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0637C872892897100C33D4E /* DateHolder.swift */; };
 		D0637C8C28928B5600C33D4E /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0637C8B28928B5600C33D4E /* CalendarHelper.swift */; };
@@ -18,9 +19,8 @@
 		D0A814B5288BD2EB003E1CF2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A814B4288BD2EB003E1CF2 /* HomeView.swift */; };
 		D0A814B7288BD4C8003E1CF2 /* CormorantSC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0A814B6288BD4C8003E1CF2 /* CormorantSC-Bold.ttf */; };
 		D0A814B9288BD57F003E1CF2 /* ManastirListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A814B8288BD57F003E1CF2 /* ManastirListView.swift */; };
-		D0A814BF288BDD85003E1CF2 /* Pravoslavlje.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D0A814BE288BDD84003E1CF2 /* Pravoslavlje.sqlite */; };
-		D0A814C2288BDE2C003E1CF2 /* Pravoslavlje.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = D0A814C0288BDE2C003E1CF2 /* Pravoslavlje.sqlite-wal */; };
-		D0A814C3288BDE2C003E1CF2 /* Pravoslavlje.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = D0A814C1288BDE2C003E1CF2 /* Pravoslavlje.sqlite-shm */; };
+		D0A8520C2896CED70004C1D6 /* Pravoslavlje.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = D0A852092896CED70004C1D6 /* Pravoslavlje.sqlite-shm */; };
+		D0A8520E2896CED70004C1D6 /* Pravoslavlje.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = D0A8520B2896CED70004C1D6 /* Pravoslavlje.sqlite-wal */; };
 		D0BF332E28893062005AD934 /* PravoslavljeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BF332D28893062005AD934 /* PravoslavljeApp.swift */; };
 		D0BF333028893062005AD934 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BF332F28893062005AD934 /* ContentView.swift */; };
 		D0BF333228893072005AD934 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0BF333128893072005AD934 /* Assets.xcassets */; };
@@ -29,21 +29,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D03F37B4289A6C0F00064D4F /* Pravoslavlje.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pravoslavlje.sqlite; sourceTree = "<group>"; };
 		D0637C852892708D00C33D4E /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		D0637C872892897100C33D4E /* DateHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHolder.swift; sourceTree = "<group>"; };
 		D0637C8B28928B5600C33D4E /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		D0637C8D2892B56F00C33D4E /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		D09418432895500B009373CF /* PraznikView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraznikView.swift; sourceTree = "<group>"; };
-		D0A1D204288BB5C400F029BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D0A1D204288BB5C400F029BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0A1D205288BBAD400F029BC /* ManastirView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManastirView.swift; sourceTree = "<group>"; };
 		D0A1D20B288BBE7E00F029BC /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		D0A814B2288BCF40003E1CF2 /* CormorantSC-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantSC-Medium.ttf"; sourceTree = "<group>"; };
 		D0A814B4288BD2EB003E1CF2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D0A814B6288BD4C8003E1CF2 /* CormorantSC-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantSC-Bold.ttf"; sourceTree = "<group>"; };
 		D0A814B8288BD57F003E1CF2 /* ManastirListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManastirListView.swift; sourceTree = "<group>"; };
-		D0A814BE288BDD84003E1CF2 /* Pravoslavlje.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pravoslavlje.sqlite; sourceTree = "<group>"; };
-		D0A814C0288BDE2C003E1CF2 /* Pravoslavlje.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pravoslavlje.sqlite-wal"; sourceTree = "<group>"; };
-		D0A814C1288BDE2C003E1CF2 /* Pravoslavlje.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pravoslavlje.sqlite-shm"; sourceTree = "<group>"; };
+		D0A852092896CED70004C1D6 /* Pravoslavlje.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pravoslavlje.sqlite-shm"; sourceTree = "<group>"; };
+		D0A8520B2896CED70004C1D6 /* Pravoslavlje.sqlite-wal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Pravoslavlje.sqlite-wal"; sourceTree = "<group>"; };
 		D0BF332A28893062005AD934 /* Православље.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Православље.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0BF332D28893062005AD934 /* PravoslavljeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PravoslavljeApp.swift; sourceTree = "<group>"; };
 		D0BF332F28893062005AD934 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,11 +124,23 @@
 		D0A814C4288BDE33003E1CF2 /* SQLite Database */ = {
 			isa = PBXGroup;
 			children = (
-				D0A814BE288BDD84003E1CF2 /* Pravoslavlje.sqlite */,
-				D0A814C1288BDE2C003E1CF2 /* Pravoslavlje.sqlite-shm */,
-				D0A814C0288BDE2C003E1CF2 /* Pravoslavlje.sqlite-wal */,
+				D03F37B4289A6C0F00064D4F /* Pravoslavlje.sqlite */,
+				D0A852092896CED70004C1D6 /* Pravoslavlje.sqlite-shm */,
+				D0A8520B2896CED70004C1D6 /* Pravoslavlje.sqlite-wal */,
 			);
 			path = "SQLite Database";
+			sourceTree = "<group>";
+		};
+		D0A852112896DA180004C1D6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0BF333128893072005AD934 /* Assets.xcassets */,
+				D0BF333328893072005AD934 /* Preview Content */,
+				D0A1D204288BB5C400F029BC /* Info.plist */,
+				D0A814B2288BCF40003E1CF2 /* CormorantSC-Medium.ttf */,
+				D0A814B6288BD4C8003E1CF2 /* CormorantSC-Bold.ttf */,
+			);
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 		D0BF332128893062005AD934 = {
@@ -152,12 +164,8 @@
 			children = (
 				D0BF332D28893062005AD934 /* PravoslavljeApp.swift */,
 				D0A1D207288BBB0D00F029BC /* Views */,
-				D0BF333128893072005AD934 /* Assets.xcassets */,
 				D0A1D208288BBB2E00F029BC /* Model */,
-				D0BF333328893072005AD934 /* Preview Content */,
-				D0A1D204288BB5C400F029BC /* Info.plist */,
-				D0A814B2288BCF40003E1CF2 /* CormorantSC-Medium.ttf */,
-				D0A814B6288BD4C8003E1CF2 /* CormorantSC-Bold.ttf */,
+				D0A852112896DA180004C1D6 /* Support Files */,
 			);
 			path = "Православље";
 			sourceTree = "<group>";
@@ -228,13 +236,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A8520C2896CED70004C1D6 /* Pravoslavlje.sqlite-shm in Resources */,
+				D03F37B5289A6C0F00064D4F /* Pravoslavlje.sqlite in Resources */,
 				D0A814B7288BD4C8003E1CF2 /* CormorantSC-Bold.ttf in Resources */,
-				D0A814C3288BDE2C003E1CF2 /* Pravoslavlje.sqlite-shm in Resources */,
 				D0BF333528893072005AD934 /* Preview Assets.xcassets in Resources */,
-				D0A814BF288BDD85003E1CF2 /* Pravoslavlje.sqlite in Resources */,
 				D0BF333228893072005AD934 /* Assets.xcassets in Resources */,
 				D0A814B3288BCF40003E1CF2 /* CormorantSC-Medium.ttf in Resources */,
-				D0A814C2288BDE2C003E1CF2 /* Pravoslavlje.sqlite-wal in Resources */,
+				D0A8520E2896CED70004C1D6 /* Pravoslavlje.sqlite-wal in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,11 +392,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Православље/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Православље/Support Files/Preview Content\"";
 				DEVELOPMENT_TEAM = 4L9MK9G9TT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Православље/Info.plist";
+				INFOPLIST_FILE = "Православље/Support Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -414,11 +422,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Православље/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Православље/Support Files/Preview Content\"";
 				DEVELOPMENT_TEAM = 4L9MK9G9TT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Православље/Info.plist";
+				INFOPLIST_FILE = "Православље/Support Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

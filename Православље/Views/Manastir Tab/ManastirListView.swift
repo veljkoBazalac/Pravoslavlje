@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ManastirListView: View {
     
-    @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: []) var manastiri: FetchedResults<Manastir>
     
     var body: some View {
@@ -22,7 +21,6 @@ struct ManastirListView: View {
                         Text(manastir.name ?? "Unknown")
                             .font(Font.custom("CormorantSC-Medium", size: 30))
                             .navigationTitle("Манастири")
-                        
                     }
                 }
                 .padding()

@@ -33,7 +33,7 @@ struct CalendarCell: View {
                 let month = CalendarHelper().monthString(dateHolder.date).cyrillicMonths()
                 let monthLetter = CalendarHelper().monthString(dateHolder.date).pictureMonthLetter()
                 
-                NavigationLink(destination: PraznikView(selectedDay: "\(day). \(month)")) {
+                NavigationLink(destination: PraznikView(selectedDay: day, selectedMonth: month, selectedMonthLetter: monthLetter, selectedPraznik: 1)) {
                     VStack {
                         Text("\(day)")
                             .frame(alignment: .top)

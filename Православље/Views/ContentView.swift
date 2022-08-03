@@ -35,7 +35,7 @@ struct ContentView: View {
                     Image(systemName: "cross")
                     Text("Манастири")
                 }
-            
+            //printUI("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!")
             CalendarView()
                 .tabItem {
                     Image(systemName: "calendar")
@@ -69,11 +69,11 @@ struct ContentView: View {
                 try FileManager.default.removeItem(at: oldURL1)
                 try FileManager.default.removeItem(at: oldURL2)
                 try FileManager.default.removeItem(at: oldURL3)
-                
+
                 try FileManager.default.copyItem(at: newURL1, to: oldURL1)
                 try FileManager.default.copyItem(at: newURL2, to: oldURL2)
                 try FileManager.default.copyItem(at: newURL3, to: oldURL3)
-                
+
                 userDefaults.set(true, forKey: PRELOADED_DATA_KEY)
             } catch {
                 print("Error: \(error.localizedDescription)")
