@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="EparhijaEntity" representedClassName="EparhijaEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="manastiri" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManastirEntity" inverseName="eparhija" inverseEntity="ManastirEntity"/>
+    </entity>
+    <entity name="ManastirEntity" representedClassName="ManastirEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="about" optional="YES" attributeType="String"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="picture" optional="YES" attributeType="String"/>
+        <relationship name="eparhija" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EparhijaEntity" inverseName="manastiri" inverseEntity="EparhijaEntity"/>
+    </entity>
+    <entity name="PraznikEntity" representedClassName="PraznikEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="about" optional="YES" attributeType="String"/>
+        <attribute name="monthday" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="picture" optional="YES" attributeType="String"/>
+    </entity>
+</model>

@@ -10,16 +10,16 @@ import SwiftUI
 @main
 struct PravoslavljeApp: App {
 
-    @StateObject private var dataController = DataController()
+    @StateObject private var viewModel = ManastiriViewModel()
     
     var body: some Scene {
         
         WindowGroup {
             let dateHolder = DateHolder()
             
-            ContentView()
-                .environment(\.managedObjectContext, dataController.container.viewContext)
-                .environmentObject(dateHolder)
+            ManastiriMapView()
+//                .environmentObject(dateHolder)
+                .environmentObject(viewModel)
         }
     }
     
