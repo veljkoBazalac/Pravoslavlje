@@ -5,18 +5,23 @@
 //  Created by VELJKO on 23.7.22..
 //
 
-import CoreData
 import Foundation
+import CoreData
 
-class CoreDataManager: ObservableObject {
+class CoreDataManager {
     
-    static let instance = CoreDataManager()
+    static let shared = CoreDataManager()
     var container : NSPersistentContainer
     var context : NSManagedObjectContext
     
-    init() {
+    init(inMemory: Bool = false) {
         print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!")
         container = NSPersistentContainer(name: "PravoslavljeContainer")
+        
+        if inMemory == true {
+            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+        }
+        
         container.loadPersistentStores { description, error in
             if let error = error {
                 print("ERROR LOADING CORE DATA. \(error)")
@@ -26,6 +31,33 @@ class CoreDataManager: ObservableObject {
         
         preloadDatabase()
     }
+    
+    func getManastirData() -> [ManastirEntity] {
+        let request = NSFetchRequest<ManastirEntity>(entityName: "ManastirEntity")
+        
+        do {
+            return try context.fetch(request)
+        } catch {
+            return []
+        }
+    }
+    
+    func getEparhijaData() -> [EparhijaEntity] {
+        let request = NSFetchRequest<EparhijaEntity>(entityName: "EparhijaEntity")
+        
+        do {
+            return try context.fetch(request)
+        } catch {
+            return []
+        }
+    }
+    
+    
+    
+}
+
+// MARK: - Preload CoreData database
+extension CoreDataManager {
     
     func preloadDatabase() {
         guard let firstStoreURL = container.persistentStoreCoordinator.persistentStores.first?.url else {
@@ -72,7 +104,8 @@ class CoreDataManager: ObservableObject {
         context = container.viewContext
     }
     
-//
+    
+    
 //    // MARK: - Preload Manastir Database
 //    private func preloadManastirData() {
 //
@@ -85,5 +118,56 @@ class CoreDataManager: ObservableObject {
 //        }
 //
 //    }
-    
 }
+
+// MARK: - Preview CoreData
+extension CoreDataManager {
+    
+//    func addSample() -> ManastirEntity {
+//            let manastir = createObject()
+//            object.timestamp = Date()
+//            return object
+//        }
+//        //MARK: CRUD methods
+//        func createObject() -> ManastirEntity {
+//            let result = ManastirEntity(context: persistenceController.container.viewContext)
+//            return result
+//        }
+//    
+    static var previewManastir: CoreDataManager = {
+        let result = CoreDataManager(inMemory: true)
+        let viewContext = result.container.viewContext
+        
+        let manastir = ManastirEntity(context: viewContext)
+        manastir.name = "Жича"
+        manastir.picture = "zica"
+        manastir.latitude = 43.6954138846703
+        manastir.longitude = 20.6459657244297
+        manastir.about = "test"
+        manastir.eparhija?.name = "жичка"
+        
+        do {
+            try viewContext.save()
+        } catch {
+            
+        }
+        return result
+    }()
+    
+    static var previewEparhija: CoreDataManager = {
+        let result = CoreDataManager(inMemory: true)
+        let viewContext = result.container.viewContext
+        
+        let eparhija = EparhijaEntity(context: viewContext)
+        eparhija.name = "жичка"
+        
+        do {
+            try viewContext.save()
+        } catch {
+            
+        }
+        return result
+    }()
+}
+
+

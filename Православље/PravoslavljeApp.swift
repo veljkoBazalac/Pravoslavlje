@@ -9,18 +9,41 @@ import SwiftUI
 
 @main
 struct PravoslavljeApp: App {
-
     @StateObject private var viewModel = ManastiriViewModel()
+    let dateHolder = DateHolder()
     
     var body: some Scene {
-        
         WindowGroup {
-            let dateHolder = DateHolder()
-            
-            ManastiriMapView()
-//                .environmentObject(dateHolder)
+            ManastiriView()
+                .environmentObject(dateHolder)
                 .environmentObject(viewModel)
         }
     }
     
+}
+
+extension View {
+    func printUI(_ args: Any..., separator: String = " ", terminator: String = "\n") -> EmptyView {
+        let output = args.map(String.init(describing:)).joined(separator: separator)
+        print(output, terminator: terminator)
+        return EmptyView()
+    }
+}
+
+extension String {
+ func getCleanedURL() -> URL? {
+    guard self.isEmpty == false else {
+        return nil
+    }
+    if let url = URL(string: self) {
+        return url
+    } else {
+        if
+            let urlEscapedString = self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed),
+            let escapedURL = URL(string: urlEscapedString){
+            return escapedURL
+        }
+    }
+    return nil
+ }
 }
