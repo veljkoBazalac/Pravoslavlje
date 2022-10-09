@@ -68,6 +68,9 @@ extension ManastiriListView {
                                     .font(Font.custom("CormorantSC-Medium", size: 15))
                             }
                         }
+                        .onTapGesture {
+                            viewModel.showNextLocation(location: manastir)
+                        }
                     }
                 }
             }

@@ -9,9 +9,12 @@ import SwiftUI
 import MapKit
 import CoreData
 
-final class ManastiriViewModel : ObservableObject {
+final class ManastiriViewModel : NSObject, ObservableObject {
     
     let manager : CoreDataManager
+    var locationManager : CLLocationManager?
+    @AppStorage("USER_LOCATION_DISABLED") var locationIsDisabled: Bool?
+    @AppStorage("NAVIGATION_APP") var navigationApp : String?
     
     // All Eparhije Data
     @Published var eparhijeArray : [EparhijaEntity] = []
@@ -21,15 +24,9 @@ final class ManastiriViewModel : ObservableObject {
     // Current location on map
     @Published var selectedManastir : ManastirEntity?
     
-//    {
-//        didSet {
-//            updateMapRegion(location: selectedManastir) // Svaki put kada se promeni mapLocation, zvace funkciju
-//        }
-//    }
-    
     // Current list of locations
     @Published var mapRegion : MKCoordinateRegion = MKCoordinateRegion()
-    let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+    let mapSpan = MKCoordinateSpan(latitudeDelta: 1.0, longitudeDelta: 1.0)
     
     // Show list of locations
     @Published var showLocationsList : Bool = false
@@ -37,19 +34,12 @@ final class ManastiriViewModel : ObservableObject {
     // MARK: - INIT
     init(manager: CoreDataManager = .shared) {
         self.manager = manager
-        fetchData()
     }
     
     // MARK: - Fetch Manastir data from CoreData database
     func fetchData() {
-        
         manastiriArray = CoreDataManager.shared.getManastirData()
         eparhijeArray = CoreDataManager.shared.getEparhijaData()
-        
-        if let location = manastiriArray.first {
-            selectedManastir = location
-            updateMapRegion(location: location)
-        }
     }
     
     // MARK: - Get Coordinates for Manastir
@@ -61,8 +51,8 @@ final class ManastiriViewModel : ObservableObject {
     private func updateMapRegion(location: ManastirEntity) {
         withAnimation(.easeInOut) {
             mapRegion = MKCoordinateRegion(
-                center: getCoordinates(location: location), // Centar mape
-                span: mapSpan) // Koliko ce biti zumirano
+                center: getCoordinates(location: location), 
+                span: mapSpan)
         }
     }
 
@@ -78,32 +68,80 @@ final class ManastiriViewModel : ObservableObject {
         withAnimation(.easeInOut) {
             selectedManastir = location
             showLocationsList = false
+            updateMapRegion(location: location)
         }
     }
-//
-//    // MARK: -  Go to Next Manastir in manastiriArray
-//    func nextButtonPressed() {
-//        // Get the currentIndex
-//        guard let currentIndex = manastiriArray.firstIndex(where: { $0 == selectedManastir }) else {
-//            print("Could not find current index in locations array!")
-//            return
-//        }
-//
-//        // Check if nextIndex not currentIndex
-//        let nextIndex = currentIndex + 1
-//        guard manastiriArray.indices.contains(nextIndex) else { // Proveriti da li postoji item sa tim indexom
-//            // Next index is NOT valid
-//            // Restart from 0
-//            guard let firstLocation = manastiriArray.first else { return }
-//            showNextLocation(location: firstLocation)
-//            return
-//        }
-//
-//        // Next index IS Valid
-//        let nextLocation = manastiriArray[nextIndex] // Uvek prvo proveriti da li postoji item sa tim indexom
-//        showNextLocation(location: nextLocation)
-//    }
+    
+    // MARK: - Calculate Distance from User Location to Manastir Location
+    func calculateDistance(location: ManastirEntity) -> Double? {
+        guard let userLocation = locationManager?.location else { return nil }
+        
+        let manastirLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        
+        return manastirLocation.distance(from: userLocation)
+    }
+    
+    // MARK: - Open Google Maps App
+    func openGoogleMaps() {
+        guard let manastir = selectedManastir else {return}
+        
+        let urlString = "comgooglemaps://?saddr=&daddr=\(manastir.latitude),\(manastir.longitude)&directionsmode=driving"
+        
+        if UIApplication.shared.canOpenURL(URL(string: urlString)!) {
+            UIApplication.shared.open(URL(string: urlString)!)
+            navigationApp = "Google"
+        }
+    }
+    
+    // MARK: - Open Apple Maps App
+    func openAppleMaps() {
+        guard let manastir = selectedManastir else {return}
+        
+        
+        let urlString = "maps://?saddr=&daddr=\(manastir.latitude),\(manastir.longitude)"
+        
+        if UIApplication.shared.canOpenURL(URL(string: urlString)!) {
+            UIApplication.shared.open(URL(string: urlString)!)
+            navigationApp = "Apple"
+        }
+    }
+}
 
+// MARK: - User Location
+extension ManastiriViewModel: CLLocationManagerDelegate {
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkLocationAuth()
+    }
+    
+    func checkIfLocationServicesIsEnabled() {
+        if CLLocationManager.locationServicesEnabled() {
+            self.locationManager = CLLocationManager()
+            self.locationManager?.delegate = self
+        } else {
+            print("Ваша Локација је искључена. Молимо Вас да укључите локацију у опцијама.")
+        }
+    }
+    
+    private func checkLocationAuth() {
+        guard let locationManager = locationManager else { return }
+        
+        switch locationManager.authorizationStatus {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted, .denied:
+            locationIsDisabled = true
+        case .authorizedAlways, .authorizedWhenInUse:
+            locationIsDisabled = false
+            if let coordinates = locationManager.location?.coordinate {
+                mapRegion = MKCoordinateRegion(center: coordinates,
+                                               span: MKCoordinateSpan(latitudeDelta: 1.0,
+                                                                      longitudeDelta: 1.0))
+            }
+        @unknown default:
+            break
+        }
+    }
 }
 
 

@@ -14,7 +14,7 @@ struct ManastirAnnotationView: View {
             Image("monastery")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 30, height: 30)
+                .frame(width: 20, height: 20)
                 .font(.headline)
                 .foregroundColor(.white)
                 .padding(6)
@@ -25,11 +25,11 @@ struct ManastirAnnotationView: View {
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(Color.orange)
-                .frame(width: 10, height: 10)
+                .frame(width: 7, height: 7)
                 .rotationEffect(Angle(degrees: 180))
                 .offset(y: -3)
-                .padding(.bottom, 40)
         }
+        .offset(y: -14)
     }
 }
 

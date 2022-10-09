@@ -24,10 +24,13 @@
 		D0A814B3288BCF40003E1CF2 /* CormorantSC-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0A814B2288BCF40003E1CF2 /* CormorantSC-Medium.ttf */; };
 		D0A814B7288BD4C8003E1CF2 /* CormorantSC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0A814B6288BD4C8003E1CF2 /* CormorantSC-Bold.ttf */; };
 		D0AD7D6428DF969600F6BE1B /* ManastirAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD7D6328DF969600F6BE1B /* ManastirAnnotationView.swift */; };
+		D0B9628628ED780600A378AB /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B9628528ED780600A378AB /* Alerts.swift */; };
 		D0BF332E28893062005AD934 /* PravoslavljeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BF332D28893062005AD934 /* PravoslavljeApp.swift */; };
 		D0BF333228893072005AD934 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0BF333128893072005AD934 /* Assets.xcassets */; };
 		D0BF333528893072005AD934 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0BF333428893072005AD934 /* Preview Assets.xcassets */; };
 		D0C6A65828DD905B00C91E25 /* ManasitriListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C6A65728DD905B00C91E25 /* ManasitriListView.swift */; };
+		D0FE582128F359AD008E3183 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FE582028F359AD008E3183 /* WebView.swift */; };
+		D0FE582328F35C86008E3183 /* WikiInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FE582228F35C86008E3183 /* WikiInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,11 +52,14 @@
 		D0A814B2288BCF40003E1CF2 /* CormorantSC-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantSC-Medium.ttf"; sourceTree = "<group>"; };
 		D0A814B6288BD4C8003E1CF2 /* CormorantSC-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantSC-Bold.ttf"; sourceTree = "<group>"; };
 		D0AD7D6328DF969600F6BE1B /* ManastirAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManastirAnnotationView.swift; sourceTree = "<group>"; };
+		D0B9628528ED780600A378AB /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		D0BF332A28893062005AD934 /* Православље.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Православље.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0BF332D28893062005AD934 /* PravoslavljeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PravoslavljeApp.swift; sourceTree = "<group>"; };
 		D0BF333128893072005AD934 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0BF333428893072005AD934 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D0C6A65728DD905B00C91E25 /* ManasitriListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManasitriListView.swift; sourceTree = "<group>"; };
+		D0FE582028F359AD008E3183 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		D0FE582228F35C86008E3183 /* WikiInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 			children = (
 				D0C6A65628DD904200C91E25 /* Manastiri View */,
 				D0637C842892705700C33D4E /* Kalendar Tab */,
+				D0B9628428ED774D00A378AB /* Reusable Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -134,6 +141,14 @@
 				D0A814B6288BD4C8003E1CF2 /* CormorantSC-Bold.ttf */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		D0B9628428ED774D00A378AB /* Reusable Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0B9628528ED780600A378AB /* Alerts.swift */,
+			);
+			path = "Reusable Views";
 			sourceTree = "<group>";
 		};
 		D0BF332128893062005AD934 = {
@@ -180,6 +195,8 @@
 				D00268BB28DF9B0200B7DD83 /* ManastirPreviewView.swift */,
 				D0A61E0B28E9BABA00BED696 /* ManastirDetailView.swift */,
 				D0AD7D6328DF969600F6BE1B /* ManastirAnnotationView.swift */,
+				D0FE582228F35C86008E3183 /* WikiInfoView.swift */,
+				D0FE582028F359AD008E3183 /* WebView.swift */,
 			);
 			path = "Manastiri View";
 			sourceTree = "<group>";
@@ -260,6 +277,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0A1D20C288BBE7E00F029BC /* CoreDataManager.swift in Sources */,
+				D0FE582128F359AD008E3183 /* WebView.swift in Sources */,
+				D0B9628628ED780600A378AB /* Alerts.swift in Sources */,
 				D00FDD0828E839C3000AFA56 /* PravoslavljeContainer.xcdatamodeld in Sources */,
 				D0637C862892708D00C33D4E /* CalendarView.swift in Sources */,
 				D0A61E0C28E9BABA00BED696 /* ManastirDetailView.swift in Sources */,
@@ -272,6 +291,7 @@
 				D0AD7D6428DF969600F6BE1B /* ManastirAnnotationView.swift in Sources */,
 				D09418442895500B009373CF /* PraznikView.swift in Sources */,
 				D0C6A65828DD905B00C91E25 /* ManasitriListView.swift in Sources */,
+				D0FE582328F35C86008E3183 /* WikiInfoView.swift in Sources */,
 				D0BF332E28893062005AD934 /* PravoslavljeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Православље/Support Files/Preview Content\"";
@@ -417,6 +438,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = veljkobazalac.Pravoslavlje;
 				PRODUCT_NAME = "Православље";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -428,6 +450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Православље/Support Files/Preview Content\"";
@@ -447,6 +470,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = veljkobazalac.Pravoslavlje;
 				PRODUCT_NAME = "Православље";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -9,9 +9,10 @@ import CoreData
 
 struct ManastirDetailView: View {
     
-    @EnvironmentObject private var vm : ManastiriViewModel
-    let manastir : ManastirEntity
+    @EnvironmentObject private var viewModel : ManastiriViewModel
     @Environment(\.dismiss) var dismiss
+    @State private var showWikiSheet : Bool = false
+    let manastir : ManastirEntity
     
     var body: some View {
         ScrollView {
@@ -23,8 +24,6 @@ struct ManastirDetailView: View {
                     titleSection
                     Divider()
                     descriptionSection
-                    Divider()
-                    mapLayer
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
@@ -34,7 +33,10 @@ struct ManastirDetailView: View {
         .ignoresSafeArea()
         .background(.ultraThinMaterial)
         .overlay(alignment: .topLeading) {
-            backButton
+            dismissButton
+        }
+        .sheet(isPresented: $showWikiSheet) {
+            WikiInfoView(urlString: manastir.link)
         }
     }
         
@@ -42,6 +44,7 @@ struct ManastirDetailView: View {
 
 extension ManastirDetailView {
     
+    // MARK: - Image Section
     private var imageSection : some View {
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.width * 0.6
@@ -53,6 +56,7 @@ extension ManastirDetailView {
         
     }
     
+    // MARK: - Title Section
     private var titleSection : some View {
         VStack(alignment: .leading, spacing: 8) {
             if let manastirName = manastir.name {
@@ -70,6 +74,7 @@ extension ManastirDetailView {
         }
     }
     
+    // MARK: - Description Section
     private var descriptionSection : some View {
         VStack(alignment: .leading, spacing: 16) {
             if let about = manastir.about {
@@ -78,54 +83,35 @@ extension ManastirDetailView {
                     .foregroundColor(.secondary)
             }
             
-            if let link = manastir.link {
-                if let url = link.getCleanedURL() {
-                    Link(destination: url) {
-                        Text("Прочитајте више на Википедији 📚")
-                            .font(Font.custom("CormorantSC-Medium", size: 16))
-                            .tint(.blue)
+            if manastir.link != nil {
+                Text("Прочитајте више на Википедији 📚")
+                    .font(Font.custom("CormorantSC-Medium", size: 16))
+                    .foregroundColor(Color.blue)
+                    .onTapGesture {
+                        showWikiSheet = true
                     }
-                }
             }
-            
         }
     }
     
-    private var mapLayer : some View {
-        
-        let coordinates = vm.getCoordinates(location: manastir)
-                
-        return Map(coordinateRegion: .constant(MKCoordinateRegion(center: coordinates,
-                                                           span: MKCoordinateSpan(
-                                                            latitudeDelta: 0.01,
-                                                            longitudeDelta: 0.01))),
-            annotationItems: [manastir]) { manastir in
-            MapAnnotation(coordinate: coordinates) {
-                ManastirAnnotationView()
-                    .shadow(radius: 10)
-            }
-        }
-            .allowsHitTesting(false)
-            .aspectRatio(1, contentMode: .fit)
-            .cornerRadius(30)
-    }
-    
-    private var backButton : some View {
+    // MARK: - Dismiss Button
+    private var dismissButton : some View {
         Button {
             dismiss()
         } label : {
             Image(systemName: "xmark")
                 .font(.headline)
-                .padding(16)
+                .padding(8)
                 .foregroundColor(.primary)
                 .background(.thickMaterial)
-                .cornerRadius(10)
+                .cornerRadius(5)
                 .shadow(radius: 4)
                 .padding()
         }
     }
 }
 
+// MARK: - Preview
 struct ManastirDetailView_Previews: PreviewProvider {
     
     static let manastirEntity = NSManagedObjectModel.mergedModel(from: nil)?.entitiesByName["ManastirEntity"]

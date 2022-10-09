@@ -14,21 +14,30 @@ struct ManastiriView: View {
     @EnvironmentObject private var viewModel : ManastiriViewModel
     
     var body: some View {
-        ZStack {
-            mapLayer
-                .ignoresSafeArea()
-            VStack(spacing: 0) {
-                header
-                    .padding()
-                Spacer()
-                locationsPreviewStack
+        if viewModel.locationIsDisabled == false {
+            ZStack {
+                mapLayer
+                    .ignoresSafeArea()
+                VStack(spacing: 0) {
+                    header
+                        .padding()
+                    Spacer()
+                    locationsPreviewStack
+                }
             }
+            .onAppear {
+                viewModel.fetchData()
+                viewModel.checkIfLocationServicesIsEnabled()
+            }
+        } else {
+            blackBackgroundForPopUp
         }
     }
 }
 
 extension ManastiriView {
-    
+
+    // MARK: - Header with Find options
     private var header : some View {
         VStack {
             Button(action: viewModel.toggleManastiriList) {
@@ -66,21 +75,23 @@ extension ManastiriView {
                 y: 15)
     }
     
+    // MARK: - Map
     private var mapLayer : some View {
-        Map(coordinateRegion: $viewModel.mapRegion,
+        Map(coordinateRegion: $viewModel.mapRegion, showsUserLocation: true,
             annotationItems: viewModel.manastiriArray,
             annotationContent: { location in
             MapAnnotation(coordinate: viewModel.getCoordinates(location: location)) {
-                    ManastirAnnotationView()
-                        .scaleEffect(viewModel.selectedManastir == location ? 1 : 0.7)
-                        .shadow(radius: 10)
-                        .onTapGesture {
-                            viewModel.showNextLocation(location: location)
-                        }
-                }
-            })
+                ManastirAnnotationView()
+                    .scaleEffect(viewModel.selectedManastir == location ? 1 : 0.7)
+                    .shadow(radius: 10)
+                    .onTapGesture {
+                        viewModel.showNextLocation(location: location)
+                    }
+            }
+        })
     }
 
+    // MARK: - Location Preview
     private var locationsPreviewStack : some View {
         ZStack {
             ForEach(viewModel.manastiriArray) { manastir in
@@ -88,7 +99,6 @@ extension ManastiriView {
                     ManastirPreviewView(manastir: manastir)
                         .shadow(color: Color.black.opacity(0.3), radius: 20)
                         .padding()
-                        //.frame(maxWidth: maxWithForIpad)
                         .frame(maxWidth: .infinity)
                         .transition(.asymmetric(
                             insertion: .move(edge: .trailing),
@@ -99,8 +109,18 @@ extension ManastiriView {
         .frame(height: 250)
     }
     
+    // MARK: - Black background with PopUp if Location is disabled
+    private var blackBackgroundForPopUp : some View {
+        Color.black
+            .ignoresSafeArea()
+            .modifier(ShowEnableLocationAlert(showAlert: viewModel.locationIsDisabled ?? false))
+            .onAppear {
+                viewModel.checkIfLocationServicesIsEnabled()
+            }
+    }
 }
 
+// MARK: - Preview
 struct ManastiriMapView_Previews: PreviewProvider {
     static var previews: some View {
         ManastiriView()

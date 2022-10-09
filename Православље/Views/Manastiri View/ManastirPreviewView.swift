@@ -13,6 +13,8 @@ struct ManastirPreviewView: View {
     @EnvironmentObject private var viewModel : ManastiriViewModel
     let manastir : ManastirEntity
     @State private var showDetailSheet : Bool = false
+    @State private var showNavAlert = false
+    @AppStorage("NAVIGATION_APP") var navigationApp : String?
     
     var body: some View {
         HStack(alignment: .top, spacing: 20) {
@@ -82,17 +84,43 @@ extension ManastirPreviewView {
     
     // MARK: - Navigation Button
     private var navButton : some View {
-        Button {
-            print("NAV")
-        } label: {
-            Image("navigation")
-                .resizable()
-                .frame(width: 45, height: 50)
-                .foregroundColor(Color("NavigationColor"))
-                .shadow(color: Color.black.opacity(0.3),
-                        radius: 3,
-                        x: 0,
-                        y: 5)
+        VStack {
+            // Button
+            Button {
+                if navigationApp == nil {
+                    showNavAlert = true
+                } else if navigationApp == "Google" {
+                    viewModel.openGoogleMaps()
+                } else if navigationApp == "Apple" {
+                    viewModel.openAppleMaps()
+                }
+            } label: {
+                Image("navigation")
+                    .resizable()
+                    .frame(width: 45, height: 50)
+                    .foregroundColor(Color("NavigationColor"))
+                    .shadow(color: Color.black.opacity(0.3),
+                            radius: 3,
+                            x: 0,
+                            y: 5)
+            }
+            .alert("Изаберите мапе", isPresented: $showNavAlert, actions: {
+                Button("Apple Maps") {
+                    viewModel.openAppleMaps()
+                }
+                Button("Google Maps") {
+                    viewModel.openGoogleMaps()
+                }
+            }) {
+                Text("Изаберите апликацију коју желите да користите.")
+            }
+            
+            // Distance in KM
+            if let distance = viewModel.calculateDistance(location: manastir) {
+                let distanceInKM = String(format: "%.0f km", distance / 1000)
+                Text("\(distanceInKM)")
+                    .font(Font.custom("CormorantSC-Bold", size: 20))
+            }
         }
     }
 }

@@ -51,9 +51,6 @@ class CoreDataManager {
             return []
         }
     }
-    
-    
-    
 }
 
 // MARK: - Preload CoreData database

@@ -30,7 +30,9 @@ extension View {
     }
 }
 
+// MARK: - Clean URL for Cyrillic letters
 extension String {
+    
  func getCleanedURL() -> URL? {
     guard self.isEmpty == false else {
         return nil
