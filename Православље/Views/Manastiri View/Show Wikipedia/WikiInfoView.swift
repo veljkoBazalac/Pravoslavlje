@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WikiInfoView: View {
+    
     @State var urlString : String?
     @Environment(\.dismiss) private var dismiss
     

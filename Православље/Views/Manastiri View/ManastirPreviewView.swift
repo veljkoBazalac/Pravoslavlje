@@ -13,7 +13,6 @@ struct ManastirPreviewView: View {
     @EnvironmentObject private var viewModel : ManastiriViewModel
     let manastir : ManastirEntity
     @State private var showDetailSheet : Bool = false
-    @State private var showNavAlert = false
     @AppStorage("NAVIGATION_APP") var navigationApp : String?
     
     var body: some View {
@@ -88,39 +87,55 @@ extension ManastirPreviewView {
             // Button
             Button {
                 if navigationApp == nil {
-                    showNavAlert = true
+                    viewModel.openGoogleMaps()
                 } else if navigationApp == "Google" {
                     viewModel.openGoogleMaps()
                 } else if navigationApp == "Apple" {
                     viewModel.openAppleMaps()
                 }
             } label: {
-                Image("navigation")
-                    .resizable()
-                    .frame(width: 45, height: 50)
-                    .foregroundColor(Color("NavigationColor"))
-                    .shadow(color: Color.black.opacity(0.3),
-                            radius: 3,
-                            x: 0,
-                            y: 5)
+                VStack {
+                    Image("navigation")
+                        .resizable()
+                        .frame(width: 45, height: 50)
+                        .foregroundColor(Color("NavigationColor"))
+                        .shadow(color: Color.black.opacity(0.3),
+                                radius: 3,
+                                x: 0,
+                                y: 5)
+                    
+                    
+                }
             }
-            .alert("Изаберите мапе", isPresented: $showNavAlert, actions: {
-                Button("Apple Maps") {
+            .contextMenu(menuItems: {
+                // Apple Maps
+                Button {
                     viewModel.openAppleMaps()
+                } label: {
+                    HStack {
+                        Text("Apple Maps")
+                        Image("appleMaps")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .scaledToFit()
+                            .shadow(radius: 10)
+                    }
                 }
-                Button("Google Maps") {
+                
+                // Google Maps
+                Button {
                     viewModel.openGoogleMaps()
+                } label: {
+                    HStack {
+                        Text("Google Maps")
+                        Image("googleMaps")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .scaledToFit()
+                            .shadow(radius: 10)
+                    }
                 }
-            }) {
-                Text("Изаберите апликацију коју желите да користите.")
-            }
-            
-            // Distance in KM
-            if let distance = viewModel.calculateDistance(location: manastir) {
-                let distanceInKM = String(format: "%.0f km", distance / 1000)
-                Text("\(distanceInKM)")
-                    .font(Font.custom("CormorantSC-Bold", size: 20))
-            }
+            })
         }
     }
 }

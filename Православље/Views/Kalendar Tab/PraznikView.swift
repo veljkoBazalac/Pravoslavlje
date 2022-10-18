@@ -18,7 +18,7 @@
 //
 //    @Environment(\.managedObjectContext) var context
 //    @FetchRequest(sortDescriptors: []) var praznici: FetchedResults<PraznikEntity>
-//    
+//
 //    @State var selectedDay : Int
 //    @State var selectedMonth : String
 //    @State var selectedMonthLetter : String
@@ -81,7 +81,7 @@
 //    func getCount() -> Int {
 //        var praznikInDay: Int = 0
 //
-//        let praznikFetchRequest: NSFetchRequest<Praznik> = Praznik.fetchRequest()
+//        let praznikFetchRequest: NSFetchRequest<PraznikEntity> = PraznikEntity.fetchRequest()
 //
 //        praznikFetchRequest.predicate = NSPredicate(format: "monthday contains[c]%@","\(selectedMonthLetter)\(selectedDay)")
 //

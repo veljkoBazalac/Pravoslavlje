@@ -10,6 +10,7 @@
 	<string>Потребна је Ваша локација да би апликација успешно функционисала.</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>clarar.otf</string>
 		<string>CormorantSC-Bold.ttf</string>
 		<string>CormorantSC-Medium.ttf</string>
 	</array>

@@ -12,19 +12,21 @@ struct ManastiriListView: View {
     @EnvironmentObject private var viewModel : ManastiriViewModel
     
     var body: some View {
-        LazyVStack {
-            ForEach(viewModel.eparhijeArray) { eparhija in
-                VStack(spacing: 5) {
-                    eparhijaName(eparhija: eparhija)
-                    rectangleSection(eparhija: eparhija)
-                    Divider()
-                        .padding(.horizontal)
+        ScrollView(.vertical, showsIndicators: false) {
+            LazyVStack {
+                ForEach(viewModel.eparhijeArray) { eparhija in
+                    VStack(spacing: 5) {
+                        eparhijaName(eparhija: eparhija)
+                        rectangleSection(eparhija: eparhija)
+                        Divider()
+                            .padding(.horizontal)
+                    }
+                    .frame(height: 120)
+                    .background(Color.clear)
                 }
-                .frame(height: 120)
-                .background(Color.clear)
             }
+            .frame(height: 500)
         }
-        
     }
 }
 

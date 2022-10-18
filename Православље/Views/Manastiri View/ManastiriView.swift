@@ -12,6 +12,7 @@ import CoreData
 struct ManastiriView: View {
     
     @EnvironmentObject private var viewModel : ManastiriViewModel
+    @State private var showEparhijeMap : Bool = false
     
     var body: some View {
         if viewModel.locationIsDisabled == false {
@@ -24,10 +25,19 @@ struct ManastiriView: View {
                     Spacer()
                     locationsPreviewStack
                 }
+                
+                if viewModel.showEparhijeMap {
+                    EparhijeMapView()
+                }
             }
             .onAppear {
                 viewModel.fetchData()
                 viewModel.checkIfLocationServicesIsEnabled()
+            }
+            .fullScreenCover(isPresented: $viewModel.showCalendar) {
+                viewModel.toggleCalendar()
+            } content: {
+                CalendarView()
             }
         } else {
             blackBackgroundForPopUp
@@ -36,18 +46,20 @@ struct ManastiriView: View {
 }
 
 extension ManastiriView {
-
+    
     // MARK: - Header with Find options
     private var header : some View {
         VStack {
-            Button(action: viewModel.toggleManastiriList) {
-                HStack {
-                    Image(systemName: "arrow.down")
-                        .font(.headline)
+            HStack(spacing: 10) {
+                
+                Button(action: viewModel.toggleEparhijeMap) {
+                    Image(systemName: "map.fill")
+                        .frame(width: 25, height: 25)
                         .foregroundColor(.primary)
                         .padding()
-                        .rotationEffect(Angle(degrees: viewModel.showLocationsList ? -180 : 0))
-                    
+                }
+                
+                Button(action: viewModel.toggleManastiriList) {
                     VStack(spacing: 0) {
                         Text("Пронађи Манастир")
                             .font(Font.custom("CormorantSC-Bold", size: 20))
@@ -55,9 +67,11 @@ extension ManastiriView {
                             .foregroundColor(.primary)
                             .frame(maxWidth: .infinity)
                     }
-                    
-                    Image(systemName: "xmark")
-                        .font(.headline)
+                }
+                
+                Button(action: viewModel.toggleCalendar) {
+                    Image(systemName: "calendar")
+                        .frame(width: 25, height: 25)
                         .foregroundColor(.primary)
                         .padding()
                 }
@@ -66,7 +80,7 @@ extension ManastiriView {
             if viewModel.showLocationsList {
                 ManastiriListView()
             }
-        }
+        } 
         .background(.thickMaterial)
         .cornerRadius(10)
         .shadow(color: Color.black.opacity(0.3),
@@ -113,7 +127,7 @@ extension ManastiriView {
     private var blackBackgroundForPopUp : some View {
         Color.black
             .ignoresSafeArea()
-            .modifier(ShowEnableLocationAlert(showAlert: viewModel.locationIsDisabled ?? false))
+//            .modifier(ShowEnableLocationAlert(showAlert: viewModel.locationIsDisabled ?? false))
             .onAppear {
                 viewModel.checkIfLocationServicesIsEnabled()
             }

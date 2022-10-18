@@ -12,23 +12,27 @@
 		D03CEF0328DD8BF100524F91 /* ManastiriView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03CEF0228DD8BF100524F91 /* ManastiriView.swift */; };
 		D03CEF0628DD8C7200524F91 /* ManastiriViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03CEF0528DD8C7200524F91 /* ManastiriViewModel.swift */; };
 		D0637C862892708D00C33D4E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0637C852892708D00C33D4E /* CalendarView.swift */; };
-		D0637C882892897100C33D4E /* DateHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0637C872892897100C33D4E /* DateHolder.swift */; };
-		D0637C8C28928B5600C33D4E /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0637C8B28928B5600C33D4E /* CalendarHelper.swift */; };
 		D0637C8E2892B56F00C33D4E /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0637C8D2892B56F00C33D4E /* CalendarCell.swift */; };
+		D076089728FB648E00448C43 /* PravoslavljeContainer.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = D076089428FB648E00448C43 /* PravoslavljeContainer.sqlite-shm */; };
+		D076089828FB648E00448C43 /* PravoslavljeContainer.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = D076089528FB648E00448C43 /* PravoslavljeContainer.sqlite-wal */; };
+		D076089928FB648E00448C43 /* PravoslavljeContainer.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D076089628FB648E00448C43 /* PravoslavljeContainer.sqlite */; };
 		D09418442895500B009373CF /* PraznikView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09418432895500B009373CF /* PraznikView.swift */; };
-		D09CA15928E9FA8200F27409 /* PravoslavljeContainer.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D09CA15628E9FA8100F27409 /* PravoslavljeContainer.sqlite */; };
-		D09CA15A28E9FA8200F27409 /* PravoslavljeContainer.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = D09CA15728E9FA8100F27409 /* PravoslavljeContainer.sqlite-wal */; };
-		D09CA15B28E9FA8200F27409 /* PravoslavljeContainer.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = D09CA15828E9FA8100F27409 /* PravoslavljeContainer.sqlite-shm */; };
+		D09BA79428F58D6B003715F8 /* EparhijeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09BA79328F58D6B003715F8 /* EparhijeMapView.swift */; };
+		D09EE51828FC23BD00A141E8 /* CalendarDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09EE51728FC23BD00A141E8 /* CalendarDetailView.swift */; };
+		D09EE51E28FC283F00A141E8 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09EE51D28FC283F00A141E8 /* DateValue.swift */; };
 		D0A1D20C288BBE7E00F029BC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1D20B288BBE7E00F029BC /* CoreDataManager.swift */; };
 		D0A61E0C28E9BABA00BED696 /* ManastirDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A61E0B28E9BABA00BED696 /* ManastirDetailView.swift */; };
+		D0A6E5EB28FCA9EE00D92AFE /* clarar.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0A6E5EA28FCA9EE00D92AFE /* clarar.otf */; };
 		D0A814B3288BCF40003E1CF2 /* CormorantSC-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0A814B2288BCF40003E1CF2 /* CormorantSC-Medium.ttf */; };
 		D0A814B7288BD4C8003E1CF2 /* CormorantSC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0A814B6288BD4C8003E1CF2 /* CormorantSC-Bold.ttf */; };
+		D0A9231928FAEEFF00583404 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A9231828FAEEFF00583404 /* CalendarViewModel.swift */; };
 		D0AD7D6428DF969600F6BE1B /* ManastirAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD7D6328DF969600F6BE1B /* ManastirAnnotationView.swift */; };
 		D0B9628628ED780600A378AB /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B9628528ED780600A378AB /* Alerts.swift */; };
 		D0BF332E28893062005AD934 /* PravoslavljeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BF332D28893062005AD934 /* PravoslavljeApp.swift */; };
 		D0BF333228893072005AD934 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0BF333128893072005AD934 /* Assets.xcassets */; };
 		D0BF333528893072005AD934 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0BF333428893072005AD934 /* Preview Assets.xcassets */; };
 		D0C6A65828DD905B00C91E25 /* ManasitriListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C6A65728DD905B00C91E25 /* ManasitriListView.swift */; };
+		D0F02ACA28FA017E00435E94 /* ImageZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F02AC928FA017E00435E94 /* ImageZoom.swift */; };
 		D0FE582128F359AD008E3183 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FE582028F359AD008E3183 /* WebView.swift */; };
 		D0FE582328F35C86008E3183 /* WikiInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FE582228F35C86008E3183 /* WikiInfoView.swift */; };
 /* End PBXBuildFile section */
@@ -39,18 +43,21 @@
 		D03CEF0228DD8BF100524F91 /* ManastiriView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManastiriView.swift; sourceTree = "<group>"; };
 		D03CEF0528DD8C7200524F91 /* ManastiriViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManastiriViewModel.swift; sourceTree = "<group>"; };
 		D0637C852892708D00C33D4E /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		D0637C872892897100C33D4E /* DateHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHolder.swift; sourceTree = "<group>"; };
-		D0637C8B28928B5600C33D4E /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		D0637C8D2892B56F00C33D4E /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		D076089428FB648E00448C43 /* PravoslavljeContainer.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PravoslavljeContainer.sqlite-shm"; sourceTree = "<group>"; };
+		D076089528FB648E00448C43 /* PravoslavljeContainer.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PravoslavljeContainer.sqlite-wal"; sourceTree = "<group>"; };
+		D076089628FB648E00448C43 /* PravoslavljeContainer.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PravoslavljeContainer.sqlite; sourceTree = "<group>"; };
 		D09418432895500B009373CF /* PraznikView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraznikView.swift; sourceTree = "<group>"; };
-		D09CA15628E9FA8100F27409 /* PravoslavljeContainer.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PravoslavljeContainer.sqlite; sourceTree = "<group>"; };
-		D09CA15728E9FA8100F27409 /* PravoslavljeContainer.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PravoslavljeContainer.sqlite-wal"; sourceTree = "<group>"; };
-		D09CA15828E9FA8100F27409 /* PravoslavljeContainer.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PravoslavljeContainer.sqlite-shm"; sourceTree = "<group>"; };
+		D09BA79328F58D6B003715F8 /* EparhijeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EparhijeMapView.swift; sourceTree = "<group>"; };
+		D09EE51728FC23BD00A141E8 /* CalendarDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailView.swift; sourceTree = "<group>"; };
+		D09EE51D28FC283F00A141E8 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 		D0A1D204288BB5C400F029BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0A1D20B288BBE7E00F029BC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D0A61E0B28E9BABA00BED696 /* ManastirDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManastirDetailView.swift; sourceTree = "<group>"; };
+		D0A6E5EA28FCA9EE00D92AFE /* clarar.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = clarar.otf; sourceTree = "<group>"; };
 		D0A814B2288BCF40003E1CF2 /* CormorantSC-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantSC-Medium.ttf"; sourceTree = "<group>"; };
 		D0A814B6288BD4C8003E1CF2 /* CormorantSC-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CormorantSC-Bold.ttf"; sourceTree = "<group>"; };
+		D0A9231828FAEEFF00583404 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		D0AD7D6328DF969600F6BE1B /* ManastirAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManastirAnnotationView.swift; sourceTree = "<group>"; };
 		D0B9628528ED780600A378AB /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		D0BF332A28893062005AD934 /* Православље.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Православље.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +65,7 @@
 		D0BF333128893072005AD934 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0BF333428893072005AD934 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D0C6A65728DD905B00C91E25 /* ManasitriListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManasitriListView.swift; sourceTree = "<group>"; };
+		D0F02AC928FA017E00435E94 /* ImageZoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageZoom.swift; sourceTree = "<group>"; };
 		D0FE582028F359AD008E3183 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		D0FE582228F35C86008E3183 /* WikiInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				D03CEF0528DD8C7200524F91 /* ManastiriViewModel.swift */,
+				D0A9231828FAEEFF00583404 /* CalendarViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -85,20 +94,11 @@
 			isa = PBXGroup;
 			children = (
 				D0637C852892708D00C33D4E /* CalendarView.swift */,
+				D09EE51728FC23BD00A141E8 /* CalendarDetailView.swift */,
 				D0637C8D2892B56F00C33D4E /* CalendarCell.swift */,
 				D09418432895500B009373CF /* PraznikView.swift */,
-				D09418472895AE89009373CF /* Kalendar Support */,
 			);
 			path = "Kalendar Tab";
-			sourceTree = "<group>";
-		};
-		D09418472895AE89009373CF /* Kalendar Support */ = {
-			isa = PBXGroup;
-			children = (
-				D0637C8B28928B5600C33D4E /* CalendarHelper.swift */,
-				D0637C872892897100C33D4E /* DateHolder.swift */,
-			);
-			path = "Kalendar Support";
 			sourceTree = "<group>";
 		};
 		D0A1D207288BBB0D00F029BC /* Views */ = {
@@ -114,6 +114,7 @@
 		D0A1D208288BBB2E00F029BC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D09EE51D28FC283F00A141E8 /* DateValue.swift */,
 				D00FDD0628E839C3000AFA56 /* PravoslavljeContainer.xcdatamodeld */,
 				D0A1D20B288BBE7E00F029BC /* CoreDataManager.swift */,
 				D0A814C4288BDE33003E1CF2 /* SQLite Database */,
@@ -124,9 +125,9 @@
 		D0A814C4288BDE33003E1CF2 /* SQLite Database */ = {
 			isa = PBXGroup;
 			children = (
-				D09CA15628E9FA8100F27409 /* PravoslavljeContainer.sqlite */,
-				D09CA15828E9FA8100F27409 /* PravoslavljeContainer.sqlite-shm */,
-				D09CA15728E9FA8100F27409 /* PravoslavljeContainer.sqlite-wal */,
+				D076089628FB648E00448C43 /* PravoslavljeContainer.sqlite */,
+				D076089428FB648E00448C43 /* PravoslavljeContainer.sqlite-shm */,
+				D076089528FB648E00448C43 /* PravoslavljeContainer.sqlite-wal */,
 			);
 			path = "SQLite Database";
 			sourceTree = "<group>";
@@ -139,6 +140,7 @@
 				D0A1D204288BB5C400F029BC /* Info.plist */,
 				D0A814B2288BCF40003E1CF2 /* CormorantSC-Medium.ttf */,
 				D0A814B6288BD4C8003E1CF2 /* CormorantSC-Bold.ttf */,
+				D0A6E5EA28FCA9EE00D92AFE /* clarar.otf */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -195,10 +197,28 @@
 				D00268BB28DF9B0200B7DD83 /* ManastirPreviewView.swift */,
 				D0A61E0B28E9BABA00BED696 /* ManastirDetailView.swift */,
 				D0AD7D6328DF969600F6BE1B /* ManastirAnnotationView.swift */,
+				D0F02ACB28FA129D00435E94 /* Show Wikipedia */,
+				D0F02ACC28FA12AA00435E94 /* Show Eparhije Map */,
+			);
+			path = "Manastiri View";
+			sourceTree = "<group>";
+		};
+		D0F02ACB28FA129D00435E94 /* Show Wikipedia */ = {
+			isa = PBXGroup;
+			children = (
 				D0FE582228F35C86008E3183 /* WikiInfoView.swift */,
 				D0FE582028F359AD008E3183 /* WebView.swift */,
 			);
-			path = "Manastiri View";
+			path = "Show Wikipedia";
+			sourceTree = "<group>";
+		};
+		D0F02ACC28FA12AA00435E94 /* Show Eparhije Map */ = {
+			isa = PBXGroup;
+			children = (
+				D09BA79328F58D6B003715F8 /* EparhijeMapView.swift */,
+				D0F02AC928FA017E00435E94 /* ImageZoom.swift */,
+			);
+			path = "Show Eparhije Map";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,13 +279,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D09CA15A28E9FA8200F27409 /* PravoslavljeContainer.sqlite-wal in Resources */,
-				D09CA15B28E9FA8200F27409 /* PravoslavljeContainer.sqlite-shm in Resources */,
+				D076089828FB648E00448C43 /* PravoslavljeContainer.sqlite-wal in Resources */,
 				D0A814B7288BD4C8003E1CF2 /* CormorantSC-Bold.ttf in Resources */,
+				D076089728FB648E00448C43 /* PravoslavljeContainer.sqlite-shm in Resources */,
 				D0BF333528893072005AD934 /* Preview Assets.xcassets in Resources */,
 				D0BF333228893072005AD934 /* Assets.xcassets in Resources */,
 				D0A814B3288BCF40003E1CF2 /* CormorantSC-Medium.ttf in Resources */,
-				D09CA15928E9FA8200F27409 /* PravoslavljeContainer.sqlite in Resources */,
+				D0A6E5EB28FCA9EE00D92AFE /* clarar.otf in Resources */,
+				D076089928FB648E00448C43 /* PravoslavljeContainer.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,21 +299,24 @@
 			files = (
 				D0A1D20C288BBE7E00F029BC /* CoreDataManager.swift in Sources */,
 				D0FE582128F359AD008E3183 /* WebView.swift in Sources */,
+				D09EE51828FC23BD00A141E8 /* CalendarDetailView.swift in Sources */,
 				D0B9628628ED780600A378AB /* Alerts.swift in Sources */,
 				D00FDD0828E839C3000AFA56 /* PravoslavljeContainer.xcdatamodeld in Sources */,
+				D0A9231928FAEEFF00583404 /* CalendarViewModel.swift in Sources */,
 				D0637C862892708D00C33D4E /* CalendarView.swift in Sources */,
 				D0A61E0C28E9BABA00BED696 /* ManastirDetailView.swift in Sources */,
 				D0637C8E2892B56F00C33D4E /* CalendarCell.swift in Sources */,
 				D03CEF0328DD8BF100524F91 /* ManastiriView.swift in Sources */,
 				D00268BC28DF9B0200B7DD83 /* ManastirPreviewView.swift in Sources */,
-				D0637C8C28928B5600C33D4E /* CalendarHelper.swift in Sources */,
 				D03CEF0628DD8C7200524F91 /* ManastiriViewModel.swift in Sources */,
-				D0637C882892897100C33D4E /* DateHolder.swift in Sources */,
+				D09EE51E28FC283F00A141E8 /* DateValue.swift in Sources */,
+				D0F02ACA28FA017E00435E94 /* ImageZoom.swift in Sources */,
 				D0AD7D6428DF969600F6BE1B /* ManastirAnnotationView.swift in Sources */,
 				D09418442895500B009373CF /* PraznikView.swift in Sources */,
 				D0C6A65828DD905B00C91E25 /* ManasitriListView.swift in Sources */,
 				D0FE582328F35C86008E3183 /* WikiInfoView.swift in Sources */,
 				D0BF332E28893062005AD934 /* PravoslavljeApp.swift in Sources */,
+				D09BA79428F58D6B003715F8 /* EparhijeMapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

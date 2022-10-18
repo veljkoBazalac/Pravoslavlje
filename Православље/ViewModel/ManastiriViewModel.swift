@@ -30,6 +30,10 @@ final class ManastiriViewModel : NSObject, ObservableObject {
     
     // Show list of locations
     @Published var showLocationsList : Bool = false
+    // Show Eparhije map
+    @Published var showEparhijeMap : Bool = false
+    // Show Calendar
+    @Published var showCalendar : Bool = false
     
     // MARK: - INIT
     init(manager: CoreDataManager = .shared) {
@@ -56,13 +60,6 @@ final class ManastiriViewModel : NSObject, ObservableObject {
         }
     }
 
-    // MARK: - Show / Hide Locations List
-    func toggleManastiriList() {
-        withAnimation(.easeInOut) {
-            showLocationsList.toggle()
-        }
-    }
-
     // MARK: - Show Next Monastiry
     func showNextLocation(location: ManastirEntity) {
         withAnimation(.easeInOut) {
@@ -71,15 +68,35 @@ final class ManastiriViewModel : NSObject, ObservableObject {
             updateMapRegion(location: location)
         }
     }
+}
+
+// MARK: - Toggle Views
+extension ManastiriViewModel {
     
-    // MARK: - Calculate Distance from User Location to Manastir Location
-    func calculateDistance(location: ManastirEntity) -> Double? {
-        guard let userLocation = locationManager?.location else { return nil }
-        
-        let manastirLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
-        
-        return manastirLocation.distance(from: userLocation)
+    // MARK: - Show / Hide Eparhije Map
+    func toggleEparhijeMap() {
+        withAnimation(.easeInOut) {
+            showEparhijeMap.toggle()
+        }
     }
+
+    // MARK: - Show / Hide Locations List
+    func toggleManastiriList() {
+        withAnimation(.easeInOut) {
+            showLocationsList.toggle()
+        }
+    }
+    
+    // MARK: - Show / Hide Calendar View
+    func toggleCalendar() {
+        withAnimation(.easeInOut) {
+            showCalendar.toggle()
+        }
+    }
+}
+
+// MARK: - Start Navigation
+extension ManastiriViewModel {
     
     // MARK: - Open Google Maps App
     func openGoogleMaps() {
@@ -96,7 +113,6 @@ final class ManastiriViewModel : NSObject, ObservableObject {
     // MARK: - Open Apple Maps App
     func openAppleMaps() {
         guard let manastir = selectedManastir else {return}
-        
         
         let urlString = "maps://?saddr=&daddr=\(manastir.latitude),\(manastir.longitude)"
         

@@ -9,14 +9,15 @@ import SwiftUI
 
 @main
 struct PravoslavljeApp: App {
-    @StateObject private var viewModel = ManastiriViewModel()
-    let dateHolder = DateHolder()
+    @StateObject private var manastirViewModel = ManastiriViewModel()
+    @StateObject private var calendarViewModel = CalendarViewModel()
     
     var body: some Scene {
         WindowGroup {
             ManastiriView()
-                .environmentObject(dateHolder)
-                .environmentObject(viewModel)
+//            CalendarView()
+                .environmentObject(manastirViewModel)
+                .environmentObject(calendarViewModel)
         }
     }
     
@@ -30,22 +31,3 @@ extension View {
     }
 }
 
-// MARK: - Clean URL for Cyrillic letters
-extension String {
-    
- func getCleanedURL() -> URL? {
-    guard self.isEmpty == false else {
-        return nil
-    }
-    if let url = URL(string: self) {
-        return url
-    } else {
-        if
-            let urlEscapedString = self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed),
-            let escapedURL = URL(string: urlEscapedString){
-            return escapedURL
-        }
-    }
-    return nil
- }
-}
