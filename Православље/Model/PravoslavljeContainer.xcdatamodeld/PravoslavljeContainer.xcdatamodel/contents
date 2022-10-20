@@ -13,11 +13,16 @@
         <attribute name="picture" attributeType="String"/>
         <relationship name="eparhija" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EparhijaEntity" inverseName="manastiri" inverseEntity="EparhijaEntity"/>
     </entity>
+    <entity name="MonthEntity" representedClassName="MonthEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="praznici" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PraznikEntity" inverseName="meseci" inverseEntity="PraznikEntity"/>
+    </entity>
     <entity name="PraznikEntity" representedClassName="PraznikEntity" syncable="YES" codeGenerationType="class">
         <attribute name="about" optional="YES" attributeType="String"/>
         <attribute name="monthday" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="picture" optional="YES" attributeType="String"/>
+        <relationship name="meseci" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MonthEntity" inverseName="praznici" inverseEntity="MonthEntity"/>
     </entity>
 </model>

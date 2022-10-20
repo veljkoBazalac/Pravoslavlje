@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - Sheet with Wikipedia WebView
 struct WikiInfoView: View {
     
     @State var urlString : String?
@@ -28,7 +29,8 @@ extension WikiInfoView {
         Button {
             dismiss()
         } label : {
-            Image(systemName: "arrow.down")
+            Image(systemName: "chevron.left")
+                .rotationEffect(Angle(degrees: -90))
                 .font(.headline)
                 .padding(8)
                 .frame(maxWidth: .infinity)
@@ -36,10 +38,12 @@ extension WikiInfoView {
                 .background(.thickMaterial)
                 .cornerRadius(5)
                 .shadow(radius: 4)
+            
         }
     }
 }
 
+// MARK: - Preview
 struct WikiInfoView_Previews: PreviewProvider {
     static var previews: some View {
         WikiInfoView(urlString: "https://sr.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BD%D0%B0%D1%81%D1%82%D0%B8%D1%80_%D0%96%D0%B8%D1%87%D0%B0")

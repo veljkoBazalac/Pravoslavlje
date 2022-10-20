@@ -7,6 +7,7 @@ import SwiftUI
 import MapKit
 import CoreData
 
+// MARK: - Sheet with Manastir Details
 struct ManastirDetailView: View {
     
     @EnvironmentObject private var viewModel : ManastiriViewModel
@@ -99,9 +100,11 @@ extension ManastirDetailView {
         Button {
             dismiss()
         } label : {
-            Image(systemName: "xmark")
+            Image(systemName: "chevron.left")
+                .rotationEffect(Angle(degrees: -90))
                 .font(.headline)
-                .padding(8)
+                .padding(.vertical, 8)
+                .padding(.horizontal, 10)
                 .foregroundColor(.primary)
                 .background(.thickMaterial)
                 .cornerRadius(5)

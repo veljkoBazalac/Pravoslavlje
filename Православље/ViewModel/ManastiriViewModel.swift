@@ -46,6 +46,11 @@ final class ManastiriViewModel : NSObject, ObservableObject {
         eparhijeArray = CoreDataManager.shared.getEparhijaData()
     }
     
+}
+
+// MARK: - Location Functions
+extension ManastiriViewModel {
+    
     // MARK: - Get Coordinates for Manastir
     func getCoordinates(location: ManastirEntity) -> CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
@@ -55,7 +60,7 @@ final class ManastiriViewModel : NSObject, ObservableObject {
     private func updateMapRegion(location: ManastirEntity) {
         withAnimation(.easeInOut) {
             mapRegion = MKCoordinateRegion(
-                center: getCoordinates(location: location), 
+                center: getCoordinates(location: location),
                 span: mapSpan)
         }
     }
@@ -66,6 +71,22 @@ final class ManastiriViewModel : NSObject, ObservableObject {
             selectedManastir = location
             showLocationsList = false
             updateMapRegion(location: location)
+        }
+    }
+    
+    // MARK: - Get Eparhija Color
+    func getEparhijaColor(eparhijaName: String? = "") -> Color {
+        switch eparhijaName {
+        case "жичка":
+            return Color.red
+        case "ваљевска":
+            return Color.green
+        case "браничевска":
+            return Color.blue
+        case "рашко-призренска":
+            return Color.purple
+        default:
+            return Color.orange
         }
     }
 }

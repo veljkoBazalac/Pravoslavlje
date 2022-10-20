@@ -13,7 +13,7 @@ struct CalendarDetailView: View {
     
     var body: some View {
         ZStack(alignment: .top) {
-            VStack(spacing: 35) {
+            VStack(spacing: 20) {
                 header
                 dayNames
                 calendarGrid
@@ -27,35 +27,34 @@ struct CalendarDetailView: View {
 
 extension CalendarDetailView {
     
-    // MARK: - Header with Year, Month and Arrow Buttons
+    // MARK: - Header with Month, Year and Arrow Buttons
     private var header : some View {
         HStack(spacing: 20) {
-            VStack(alignment: .leading, spacing: 10) {
-                Text(viewModel.yearString())
-                    .font(Font.custom("Clara", size: 20))
-                
-                Text(viewModel.monthString().cyrillicMonths())
-                    .font(Font.custom("Clara", size: 40))
-            }
+            // Month and Year Text
+            Text(viewModel.getCalendarTitle())
+                .font(Font.custom("Clara", size: 35))
             
             Spacer(minLength: 0)
             
-            Button {
-                withAnimation(.easeInOut(duration: 0.1)) {
-                    viewModel.previousMonth()
+            HStack(spacing: 30) {
+                // Previous Month Button
+                Button {
+                    withAnimation(.easeInOut(duration: 0.1)) {
+                        viewModel.previousMonth()
+                    }
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.title2)
                 }
-            } label: {
-                Image(systemName: "chevron.left")
-                    .font(.title2)
-            }
-            
-            Button {
-                withAnimation(.easeInOut(duration: 0.1)) {
-                    viewModel.nextMonth()
+                // Next Month Button
+                Button {
+                    withAnimation(.easeInOut(duration: 0.1)) {
+                        viewModel.nextMonth()
+                    }
+                } label: {
+                    Image(systemName: "chevron.right")
+                        .font(.title2)
                 }
-            } label: {
-                Image(systemName: "chevron.right")
-                    .font(.title2)
             }
         }
         .padding(.horizontal)
@@ -74,8 +73,8 @@ extension CalendarDetailView {
     
     // MARK: - Calendar Grid
     private var calendarGrid : some View {
-        LazyVGrid(columns: viewModel.gridColumns) {
-            ForEach(viewModel.extractDate()) { value in
+        LazyVGrid(columns: viewModel.gridColumns, spacing: 0) {
+            ForEach(viewModel.getDays()) { value in
                 CalendarCell(dayForCell: value)
             }
         }
@@ -83,6 +82,7 @@ extension CalendarDetailView {
     
 }
 
+// MARK: - Preview
 struct CustomDatePicker_Previews: PreviewProvider {
     static var previews: some View {
         CalendarView()

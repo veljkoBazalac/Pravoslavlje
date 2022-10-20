@@ -7,7 +7,10 @@
 
 import SwiftUI
 
+// MARK: - Annotation View for Map
 struct ManastirAnnotationView: View {
+    
+    @State var color : Color
     
     var body: some View {
         VStack(spacing: 0) {
@@ -18,13 +21,13 @@ struct ManastirAnnotationView: View {
                 .font(.headline)
                 .foregroundColor(.white)
                 .padding(6)
-                .background(Color.orange)
-                .cornerRadius(36)
-            
+                .background(color)
+                .clipShape(Circle())
+                
             Image(systemName: "triangle.fill")
                 .resizable()
                 .scaledToFit()
-                .foregroundColor(Color.orange)
+                .foregroundColor(color)
                 .frame(width: 7, height: 7)
                 .rotationEffect(Angle(degrees: 180))
                 .offset(y: -3)
@@ -33,11 +36,12 @@ struct ManastirAnnotationView: View {
     }
 }
 
+// MARK: - Preview
 struct ManastirAnnotationView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack{
             Color.black.ignoresSafeArea()
-            ManastirAnnotationView()
+            ManastirAnnotationView(color: Color.orange)
         }
     }
 }

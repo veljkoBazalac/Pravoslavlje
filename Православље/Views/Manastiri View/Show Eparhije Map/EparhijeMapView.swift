@@ -7,28 +7,34 @@
 
 import SwiftUI
 
+// MARK: - Image with Eparhije Map
 struct EparhijeMapView: View {
     
-    @EnvironmentObject private var viewModel : ManastiriViewModel
+    @Binding var showView : Bool
     
     var body: some View {
         ZStack {
-            Color.black.opacity(0.8).ignoresSafeArea()
-                .onTapGesture {
-                    viewModel.toggleEparhijeMap()
-                }
-            
-            Image("eparhije")
-                .resizable()
-                .frame(width: getRect().width - 30, height: 350)
-                .scaledToFit()
-                .addPinchZoom()
+            if showView {
+                Color.black.opacity(showView ? 0.4 : 0).ignoresSafeArea()
+                    .onTapGesture {
+                        withAnimation(.linear(duration: 0.2)) {
+                            self.showView.toggle()
+                        }
+                    }
+                
+                Image("eparhije")
+                    .resizable()
+                    .frame(width: getRect().width - 30, height: 350)
+                    .scaledToFit()
+                    .addPinchZoom()
+            }
         }
     }
 }
 
+// MARK: - Preview
 struct EparhijeMapView_Previews: PreviewProvider {
     static var previews: some View {
-        EparhijeMapView()
+        EparhijeMapView(showView: .constant(true))
     }
 }

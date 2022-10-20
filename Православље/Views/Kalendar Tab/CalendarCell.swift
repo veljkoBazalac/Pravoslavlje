@@ -18,51 +18,14 @@ struct CalendarCell: View {
                 cellDetails
             }
         }
-        .padding(.vertical, 8)
-        .padding(.horizontal, 8)
+        .padding(8)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        
-        
-        
-//        if count <= 42 {
-//
-//            if count <= startingSpaces || count - startingSpaces > daysInMonth {
-//                Text("")
-//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-//            } else {
-
-//                let day = count - startingSpaces
-//                let month = viewModel.monthString(viewModel.date).cyrillicMonths()
-//                let monthLetter = viewModel.monthString(viewModel.date).pictureMonthLetter()
-                
-//                NavigationLink(destination: PraznikView(selectedDay: day,
-//                                                        selectedMonth: month,
-//                                                        selectedMonthLetter: monthLetter,
-//                                                        selectedPraznik: 1)) {
-//                    VStack {
-//                        Text("\(day)")
-//                            .frame(alignment: .top)
-//                            .frame(maxWidth: .infinity, maxHeight: 20)
-//                            .padding(.top, 5)
-//                        Spacer()
-//                        if let imageName = viewModel.imageName(day: day, month: month, monthLetter: monthLetter) {
-//                            Image(imageName)
-//                                .resizable()
-//                                .frame(maxHeight: .infinity)
-//                                .aspectRatio(contentMode: .fit)
-//                        }
-//                        Spacer()
-//                    }
-//                    .frame(maxHeight: .infinity)
-//                    .border(.red, width: 2)
-//                }
-//            }
-//        }
     }
     
     // MARK: - Cell Text and Image
     private var cellDetails : some View {
-        VStack(alignment: .center, spacing: 4) {
+        VStack(alignment: .center, spacing: 5) {
+            // Cell Number
             Text("\(dayForCell.day)")
                 .font(Font.custom("Clara", size: 20))
                 .padding(.top, 2)
@@ -73,17 +36,21 @@ struct CalendarCell: View {
                         .cornerRadius(4)
                         .padding(.top, 3)
                 )
-                
-            Image("o1.1")
-                .resizable()
-                .scaledToFit()
+            // Cell Image
+            if let imageName = viewModel.getCellImage(dayDate: dayForCell) {
+                Image(imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity, maxHeight: 60)
+            }
         }
-        .border(viewModel.getRedDays(value: dayForCell.date) == true ? .red : .clear,
+        // Cell Border for Red Days
+        .border(viewModel.getRedDays(date: dayForCell.date) == true ? .red : .clear,
                 width: 2)
     }
-    
 }
 
+// MARK: - Preview
 struct CalendarCell_Previews: PreviewProvider {
     static var previews: some View {
         CalendarView()

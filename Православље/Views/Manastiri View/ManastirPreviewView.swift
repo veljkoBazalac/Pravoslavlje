@@ -8,11 +8,13 @@
 import SwiftUI
 import CoreData
 
+// MARK: - Preview of the Manastir
 struct ManastirPreviewView: View {
     
     @EnvironmentObject private var viewModel : ManastiriViewModel
     let manastir : ManastirEntity
     @State private var showDetailSheet : Bool = false
+    // Save User Navigation App Selection
     @AppStorage("NAVIGATION_APP") var navigationApp : String?
     
     var body: some View {
@@ -69,13 +71,15 @@ extension ManastirPreviewView {
     private var nameSection : some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(manastir.name ?? "")
+                .lineLimit(1)
                 .font(Font.custom("CormorantSC-Bold", size: 30))
+                .minimumScaleFactor(0.7)
             
             if let eparhijaName = manastir.eparhija?.name {
                 Text("Епархија \(eparhijaName)")
                     .lineLimit(2)
                     .font(Font.custom("CormorantSC-Medium", size: 20))
-                    .minimumScaleFactor(0.7)
+                    .minimumScaleFactor(0.5)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)

@@ -25,18 +25,9 @@ struct ManastiriView: View {
                     Spacer()
                     locationsPreviewStack
                 }
-                
-                if viewModel.showEparhijeMap {
-                    EparhijeMapView()
-                }
-            }
-            .onAppear {
-                viewModel.fetchData()
-                viewModel.checkIfLocationServicesIsEnabled()
+                EparhijeMapView(showView: $showEparhijeMap)
             }
             .fullScreenCover(isPresented: $viewModel.showCalendar) {
-                viewModel.toggleCalendar()
-            } content: {
                 CalendarView()
             }
         } else {
@@ -51,14 +42,18 @@ extension ManastiriView {
     private var header : some View {
         VStack {
             HStack(spacing: 10) {
-                
-                Button(action: viewModel.toggleEparhijeMap) {
+                // Eparhije Map Button
+                Button {
+                    withAnimation(.linear(duration: 0.2)) {
+                        self.showEparhijeMap.toggle()
+                    }
+                } label: {
                     Image(systemName: "map.fill")
                         .frame(width: 25, height: 25)
                         .foregroundColor(.primary)
                         .padding()
                 }
-                
+                // Manastiri List
                 Button(action: viewModel.toggleManastiriList) {
                     VStack(spacing: 0) {
                         Text("Пронађи Манастир")
@@ -68,7 +63,7 @@ extension ManastiriView {
                             .frame(maxWidth: .infinity)
                     }
                 }
-                
+                // Calendar Button
                 Button(action: viewModel.toggleCalendar) {
                     Image(systemName: "calendar")
                         .frame(width: 25, height: 25)
@@ -76,7 +71,7 @@ extension ManastiriView {
                         .padding()
                 }
             }
-            
+            // Show Manastiri List View
             if viewModel.showLocationsList {
                 ManastiriListView()
             }
@@ -91,16 +86,20 @@ extension ManastiriView {
     
     // MARK: - Map
     private var mapLayer : some View {
-        Map(coordinateRegion: $viewModel.mapRegion, showsUserLocation: true,
+        Map(coordinateRegion: $viewModel.mapRegion,
+            showsUserLocation: true,
             annotationItems: viewModel.manastiriArray,
-            annotationContent: { location in
-            MapAnnotation(coordinate: viewModel.getCoordinates(location: location)) {
-                ManastirAnnotationView()
-                    .scaleEffect(viewModel.selectedManastir == location ? 1 : 0.7)
-                    .shadow(radius: 10)
-                    .onTapGesture {
-                        viewModel.showNextLocation(location: location)
-                    }
+            annotationContent: { manastir in
+            MapAnnotation(coordinate: viewModel.getCoordinates(location: manastir)) {
+                if let eparhijaName = manastir.eparhija?.name {
+                    // Add Annotation with Eparhija Color
+                    ManastirAnnotationView(color: viewModel.getEparhijaColor(eparhijaName: eparhijaName))
+                        .scaleEffect(viewModel.selectedManastir == manastir ? 1.1 : 0.7)
+                        .shadow(radius: 10)
+                        .onTapGesture {
+                            viewModel.showNextLocation(location: manastir)
+                        }
+                }
             }
         })
     }
@@ -127,7 +126,7 @@ extension ManastiriView {
     private var blackBackgroundForPopUp : some View {
         Color.black
             .ignoresSafeArea()
-//            .modifier(ShowEnableLocationAlert(showAlert: viewModel.locationIsDisabled ?? false))
+            .modifier(ShowEnableLocationAlert(showAlert: viewModel.locationIsDisabled ?? false))
             .onAppear {
                 viewModel.checkIfLocationServicesIsEnabled()
             }

@@ -18,6 +18,11 @@ struct PravoslavljeApp: App {
 //            CalendarView()
                 .environmentObject(manastirViewModel)
                 .environmentObject(calendarViewModel)
+                .onAppear {
+                    manastirViewModel.fetchData()
+                    manastirViewModel.checkIfLocationServicesIsEnabled()
+                    calendarViewModel.fetchData()
+                }
         }
     }
     

@@ -9,6 +9,7 @@ import Foundation
 import WebKit
 import SwiftUI
 
+// MARK: - WebView Representable
 struct WebView: UIViewRepresentable {
     
     let url : URL?
@@ -25,10 +26,8 @@ struct WebView: UIViewRepresentable {
     }
 }
 
-
-// MARK: - Clean URL for Cyrillic letters
 extension String {
-    
+    // MARK: - Clean URL for Cyrillic letters
     func getCleanedURL() -> URL? {
         guard self.isEmpty == false else {
             return nil
