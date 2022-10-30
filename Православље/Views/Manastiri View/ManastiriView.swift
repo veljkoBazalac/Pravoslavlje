@@ -48,7 +48,7 @@ extension ManastiriView {
                         self.showEparhijeMap.toggle()
                     }
                 } label: {
-                    Image(systemName: "map.fill")
+                    Image(systemName: K.Images.map)
                         .frame(width: 25, height: 25)
                         .foregroundColor(.primary)
                         .padding()
@@ -56,8 +56,8 @@ extension ManastiriView {
                 // Manastiri List
                 Button(action: viewModel.toggleManastiriList) {
                     VStack(spacing: 0) {
-                        Text("Пронађи Манастир")
-                            .font(Font.custom("CormorantSC-Bold", size: 20))
+                        Text(K.Text.findMonastery)
+                            .font(Font.custom(K.Fonts.clara, size: 22))
                             .fontWeight(.black)
                             .foregroundColor(.primary)
                             .frame(maxWidth: .infinity)
@@ -65,7 +65,7 @@ extension ManastiriView {
                 }
                 // Calendar Button
                 Button(action: viewModel.toggleCalendar) {
-                    Image(systemName: "calendar")
+                    Image(systemName: K.Images.calendar)
                         .frame(width: 25, height: 25)
                         .foregroundColor(.primary)
                         .padding()

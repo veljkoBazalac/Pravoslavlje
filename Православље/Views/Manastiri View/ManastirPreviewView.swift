@@ -15,7 +15,7 @@ struct ManastirPreviewView: View {
     let manastir : ManastirEntity
     @State private var showDetailSheet : Bool = false
     // Save User Navigation App Selection
-    @AppStorage("NAVIGATION_APP") var navigationApp : String?
+    @AppStorage(K.AppStorage.navigationApp) var navigationApp : String?
     
     var body: some View {
         HStack(alignment: .top, spacing: 20) {
@@ -72,13 +72,13 @@ extension ManastirPreviewView {
         VStack(alignment: .leading, spacing: 4) {
             Text(manastir.name ?? "")
                 .lineLimit(1)
-                .font(Font.custom("CormorantSC-Bold", size: 30))
+                .font(Font.custom(K.Fonts.clara, size: 35))
                 .minimumScaleFactor(0.7)
             
             if let eparhijaName = manastir.eparhija?.name {
                 Text("Епархија \(eparhijaName)")
                     .lineLimit(2)
-                    .font(Font.custom("CormorantSC-Medium", size: 20))
+                    .font(Font.custom(K.Fonts.clara, size: 22))
                     .minimumScaleFactor(0.5)
             }
         }
@@ -92,23 +92,21 @@ extension ManastirPreviewView {
             Button {
                 if navigationApp == nil {
                     viewModel.openGoogleMaps()
-                } else if navigationApp == "Google" {
+                } else if navigationApp == K.Text.NavigationApp.google {
                     viewModel.openGoogleMaps()
-                } else if navigationApp == "Apple" {
+                } else if navigationApp == K.Text.NavigationApp.apple {
                     viewModel.openAppleMaps()
                 }
             } label: {
                 VStack {
-                    Image("navigation")
+                    Image(K.Images.Navigation.navigationLogo)
                         .resizable()
                         .frame(width: 45, height: 50)
-                        .foregroundColor(Color("NavigationColor"))
+                        .foregroundColor(Color(K.Colors.navigation))
                         .shadow(color: Color.black.opacity(0.3),
                                 radius: 3,
                                 x: 0,
                                 y: 5)
-                    
-                    
                 }
             }
             .contextMenu(menuItems: {
@@ -117,8 +115,8 @@ extension ManastirPreviewView {
                     viewModel.openAppleMaps()
                 } label: {
                     HStack {
-                        Text("Apple Maps")
-                        Image("appleMaps")
+                        Text(K.Text.NavigationName.appleMaps)
+                        Image(K.Images.Navigation.apple)
                             .resizable()
                             .frame(width: 30, height: 30)
                             .scaledToFit()
@@ -131,8 +129,8 @@ extension ManastirPreviewView {
                     viewModel.openGoogleMaps()
                 } label: {
                     HStack {
-                        Text("Google Maps")
-                        Image("googleMaps")
+                        Text(K.Text.NavigationName.googleMaps)
+                        Image(K.Images.Navigation.google)
                             .resizable()
                             .frame(width: 30, height: 30)
                             .scaledToFit()

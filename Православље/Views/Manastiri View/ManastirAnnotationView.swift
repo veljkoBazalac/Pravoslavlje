@@ -14,7 +14,7 @@ struct ManastirAnnotationView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            Image("monastery")
+            Image(K.Images.Annotations.monastery)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 20, height: 20)
@@ -24,7 +24,7 @@ struct ManastirAnnotationView: View {
                 .background(color)
                 .clipShape(Circle())
                 
-            Image(systemName: "triangle.fill")
+            Image(systemName: K.Images.Annotations.triangle)
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(color)

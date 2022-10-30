@@ -18,7 +18,7 @@ struct CalendarCell: View {
                 cellDetails
             }
         }
-        .padding(8)
+        .padding(.horizontal, 8)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
@@ -27,11 +27,12 @@ struct CalendarCell: View {
         VStack(alignment: .center, spacing: 5) {
             // Cell Number
             Text("\(dayForCell.day)")
-                .font(Font.custom("Clara", size: 20))
+                .font(Font.custom(K.Fonts.clara, size: 20))
+                .foregroundColor(Color(K.Colors.textColor))
                 .padding(.top, 2)
                 .padding(.horizontal, 2)
                 .background(
-                    Color.orange
+                    viewModel.getFastingDays(date: dayForCell.date)
                         .frame(width: 25)
                         .cornerRadius(4)
                         .padding(.top, 3)
@@ -41,12 +42,15 @@ struct CalendarCell: View {
                 Image(imageName)
                     .resizable()
                     .scaledToFit()
+                    .cornerRadius(5)
                     .frame(maxWidth: .infinity, maxHeight: 60)
             }
         }
+        
         // Cell Border for Red Days
-        .border(viewModel.getRedDays(date: dayForCell.date) == true ? .red : .clear,
+        .border(viewModel.getRedDays(date: dayForCell.date),
                 width: 2)
+        .cornerRadius(2)
     }
 }
 

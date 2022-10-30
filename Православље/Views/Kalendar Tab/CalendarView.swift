@@ -17,37 +17,23 @@ struct CalendarView: View {
     
     var body: some View {
         ZStack {
-            VStack(alignment: .leading, spacing: 5) {
+            VStack(alignment: .leading, spacing: 0) {
                 HStack(alignment: .center) {
-                    backButton
+                    ArrowDownButton()
                     Spacer()
                     infoButton
                 }
                 calendarDetailView
-                Spacer(minLength: 0)
             }
             FastingView(showView: $showView)
         }
-        .background(.ultraThinMaterial)
+        .background(
+            backgroundGradiant()
+        )
     }
 }
 
 extension CalendarView {
-    
-    // MARK: - Back Button
-    private var backButton : some View {
-        Button {
-            dismissView()
-        } label: {
-            HStack() {
-                Image(systemName: "chevron.left")
-                    .font(.title2)
-                    .rotationEffect(Angle(degrees: -90))
-                    .padding(.leading, 20)
-            }
-        }
-        .padding(.top, 5)
-    }
     
     // MARK: - Info Button
     private var infoButton : some View {
@@ -56,8 +42,9 @@ extension CalendarView {
                 self.showView.toggle()
             }
         } label: {
-            Image(systemName: "info.circle")
+            Image(systemName: K.Images.infoCircle)
                 .font(.title2)
+                .foregroundColor(Color(K.Colors.textColor))
                 .padding(.trailing, 15)
         }
     }
@@ -71,6 +58,7 @@ extension CalendarView {
     }
 }
 
+// MARK: - Preview
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
         CalendarView()

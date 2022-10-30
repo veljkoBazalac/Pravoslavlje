@@ -22,7 +22,7 @@ struct EparhijeMapView: View {
                         }
                     }
                 
-                Image("eparhije")
+                Image(K.Images.eparhije)
                     .resizable()
                     .frame(width: getRect().width - 30, height: 350)
                     .scaledToFit()

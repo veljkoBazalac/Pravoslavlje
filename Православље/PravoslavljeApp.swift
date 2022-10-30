@@ -15,24 +15,15 @@ struct PravoslavljeApp: App {
     var body: some Scene {
         WindowGroup {
             ManastiriView()
-//            CalendarView()
                 .environmentObject(manastirViewModel)
                 .environmentObject(calendarViewModel)
                 .onAppear {
-                    manastirViewModel.fetchData()
                     manastirViewModel.checkIfLocationServicesIsEnabled()
+                    manastirViewModel.fetchData()
                     calendarViewModel.fetchData()
                 }
         }
     }
     
-}
-
-extension View {
-    func printUI(_ args: Any..., separator: String = " ", terminator: String = "\n") -> EmptyView {
-        let output = args.map(String.init(describing:)).joined(separator: separator)
-        print(output, terminator: terminator)
-        return EmptyView()
-    }
 }
 

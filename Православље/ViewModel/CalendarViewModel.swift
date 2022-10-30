@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import CoreData
 
 final class CalendarViewModel: ObservableObject {
     
@@ -16,6 +17,11 @@ final class CalendarViewModel: ObservableObject {
     
     // Current Month selected
     @Published var currentMonth : Int = 0
+    // Current Day selected
+    @Published var currentDay : Int = 0
+    // Current Praznik selected in day
+    @Published var currentPraznik : Int = 0
+    
     
     // Grid Columns
     let gridColumns = Array(repeating: GridItem(.flexible()), count: 7)
@@ -24,28 +30,38 @@ final class CalendarViewModel: ObservableObject {
     
     // Show Fasting View
     @Published var showFastingView : Bool = false
+    // Show Praznik View
+    @Published var showPraznikView : Bool = false
     
-    // All Eparhije Data
-    @Published var monthArray : [MonthEntity] = []
+    // Months array
+    @Published var monthsArray : [MonthEntity] = []
+    // All Praznik array data
+    @Published var prazniciArray : [PraznikEntity] = []
+    // Praznik array data for selected day
+    @Published var prazniciInDay : [PraznikEntity] = []
     
-    @Published var praznikArray : [PraznikEntity] = []
-    
+    // Get Data from CoreData
     func fetchData() {
-        monthArray = CoreDataManager.shared.getMonthData()
-        praznikArray = CoreDataManager.shared.getPraznikData()
+        monthsArray = CoreDataManager.shared.getMonthData()
+        prazniciArray = CoreDataManager.shared.getPraznikData()
     }
 }
 
 // MARK: - Calendar Methods
 extension CalendarViewModel {
     
-    // MARK: - Get Month and Year Title
+    // MARK: - Get Month Name
+    func getMonthName() -> String {
+        guard let month = monthsArray[monthNumber() - 1].name else { return "" }
+        return month
+    }
+    
+    // MARK: - Get Calendar Title with Month and Year
     func getCalendarTitle() -> String {
-        guard let month = monthArray[monthNumber()].name else { return "" }
+        let month = getMonthName()
         let year = yearString()
         return "\(month) \(year)"
     }
-    
     
     // MARK: - Get Current Month
     func getCurrentMonth() -> Date {
@@ -57,14 +73,14 @@ extension CalendarViewModel {
     
     // MARK: - Go to Previous Month
     func previousMonth() {
-        if monthString().cyrillicMonths() != "Јануар" {
+        if monthNumber() >= 2 {
             currentMonth -= 1
         }
     }
     
     // MARK: - Go to Next Month
     func nextMonth() {
-        if monthString().cyrillicMonths() != "Децембар" {
+        if monthNumber() <= 11 {
             currentMonth += 1
         }
     }
@@ -82,7 +98,7 @@ extension CalendarViewModel {
         
         let firstWeekDay = calendar.component(.weekday, from: days.first?.date ?? Date())
         
-        // Calculate Offset
+        // Calculate Cell Offset
         if firstWeekDay != 1 {
             // Empty Cells at the beginning
             for _ in 0..<(firstWeekDay - 2) {
@@ -95,34 +111,49 @@ extension CalendarViewModel {
                 days.insert(DateValue(day: -1, month: 0, date: Date()), at: 0)
             }
         }
-        
         return days
     }
     
-    // MARK: - Get Red Days
-    func getRedDays(date: Date) -> Bool {
+    // MARK: - Create Array of PraznikEntity for selected day
+    func getPrazniciInDay(day: Int, month: Int) {
+        prazniciInDay.removeAll()
         
-        if dayString(date: date) == "Sunday" {
-            return true
-        } else {
-            
-            let day = calendar.component(.day, from: date)
-            let month = calendar.component(.month, from: date)
-            
-            switch month {
-            case 10:
-                if day == 27 || day == 31 {
-                    return true
+        let praznici = prazniciArray
+            .filter({ $0.monthday == day })
+            .sorted(by: { $0.number < $1.number })
+        
+        if !praznici.isEmpty {
+            for praznik in praznici {
+                if let praznikMonth = praznik.meseci?.number,
+                   praznikMonth == month {
+                    prazniciInDay.append(praznik)
+                    currentDay = day
+                    showPraznikView = true
                 }
-            default:
-                return false
             }
-            
-            return false
+        } 
+    }
+    
+    // MARK: - Get Praznik selected
+    func getPraznik(current: Int) -> PraznikEntity {
+        return prazniciInDay[current - 1]
+    }
+    
+    // MARK: - Get About Section for Praznik
+    func getPraznikAbout() -> String {
+        if
+            !prazniciInDay.isEmpty,
+            let about = prazniciInDay[currentPraznik].about {
+            return about
+        } else {
+            return ""
         }
     }
     
-    
+    // MARK: - Get selected Tag for PageView
+    func getTag(number: Int) -> Int {
+        return number - 1
+    }
 }
 
 // MARK: - Calendar Format
@@ -155,7 +186,7 @@ extension CalendarViewModel {
     // MARK: - Get Month Number
     func monthNumber() -> Int {
         let monthNumber = calendar.component(.month, from: date)
-        return monthNumber - 1
+        return monthNumber
     }
 }
 
@@ -166,11 +197,12 @@ extension CalendarViewModel {
     func getCellImage(dayDate: DateValue) -> String? {
         return imageName(day: dayDate.day,
                          month: dayDate.month ,
-                         monthLetter: pictureMonthLetter(month: dayDate.month))
+                         monthLetter: pictureMonthLetter(month: dayDate.month),
+                         inDayNumber: 1)
     }
     
     // MARK: - Get image name for days
-    func imageName(day: Int, month: Int, monthLetter: String) -> String? {
+    func imageName(day: Int, month: Int, monthLetter: String, inDayNumber: Int) -> String? {
         
         if day == 21 && month == 4 {
             return "tajnaVecera"
@@ -201,7 +233,7 @@ extension CalendarViewModel {
         } else if (day == 29 || day == 30 || day == 31) && month == 2 {
             return nil
         } else {
-            return "\(monthLetter)\(day).1"
+            return "\(monthLetter)\(day).\(inDayNumber)"
         }
     }
     
@@ -239,6 +271,100 @@ extension CalendarViewModel {
     }
 }
 
+// MARK: - Praznik Methods
+extension CalendarViewModel {
+    
+    // MARK: - Get Red Days for Calendar
+    func getRedDays(date: Date) -> Color {
+        
+        if dayString(date: date) == "Sunday" {
+            return Color.red
+        } else {
+            
+            let month = calendar.component(.month, from: date)
+            let day = calendar.component(.day, from: date)
+            
+            switch month {
+                
+            // October
+            case 10:
+                switch day {
+                case 27, 31:
+                    return Color.red
+                default:
+                    return Color.clear
+                }
+                
+            // November
+            case 11:
+                switch day {
+                case 8, 21:
+                    return Color.red
+                default:
+                    return Color.clear
+                }
+            
+            // December
+            case 12:
+                switch day {
+                case 4, 19:
+                    return Color.red
+                default:
+                    return Color.clear
+                }
+            default:
+                return Color.clear
+            }
+        }
+    }
+    
+    // MARK: - Get Fasting Days for Calendar
+    func getFastingDays(date: Date) -> Color {
+        
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        
+        switch month {
+        //
+        
+        // October
+        case 10:
+            switch day {
+            case 5, 12, 21, 26, 28:
+                return Color(K.Colors.voda)
+            case 7, 14, 19:
+                return Color(K.Colors.ulje)
+            default:
+                return Color.clear
+            }
+        // November
+        case 11:
+            switch day {
+            case 2, 4, 9, 11, 18, 23, 28, 30:
+                return Color(K.Colors.voda)
+            case 16, 25, 29:
+                return Color(K.Colors.ulje)
+            default:
+                return Color.clear
+            }
+        // December
+        case 12:
+            switch day {
+            case 2, 5, 12, 14, 16, 21, 23, 28:
+                return Color(K.Colors.voda)
+            case 1, 6, 7, 8, 9, 13, 15, 20, 22, 26, 27, 29, 30, 31:
+                return Color(K.Colors.ulje)
+            case 3, 4, 10, 11, 17, 18, 19, 24, 25:
+                return Color(K.Colors.riba)
+            default:
+                return Color.clear
+            }
+        default:
+            return Color.clear
+        }
+    }
+}
+
 // MARK: - Date Extension
 extension Date {
     func getAllDates() -> [Date] {
@@ -257,39 +383,3 @@ extension Date {
     }
 }
 
-// MARK: - String Extension
-extension String {
-    
-    // MARK: - Get Cyrillic Month Names
-    func cyrillicMonths() -> String {
-        switch self {
-        case "Jan":
-            return "Јануар"
-        case "Feb":
-            return "Фебруар"
-        case "Mar":
-            return "Март"
-        case "Apr":
-            return "Април"
-        case "May":
-            return "Мај"
-        case "Jun":
-            return "Јун"
-        case "Jul":
-            return "Јул"
-        case "Aug":
-            return "Август"
-        case "Sep":
-            return "Септембар"
-        case "Oct":
-            return "Октобар"
-        case "Nov":
-            return "Новембар"
-        case "Dec":
-            return "Децембар"
-        default:
-            return ""
-        }
-    }
-    
-}

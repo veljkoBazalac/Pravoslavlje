@@ -29,7 +29,7 @@ extension WikiInfoView {
         Button {
             dismiss()
         } label : {
-            Image(systemName: "chevron.left")
+            Image(systemName: K.Images.chevronLeft)
                 .rotationEffect(Angle(degrees: -90))
                 .font(.headline)
                 .padding(8)
@@ -46,6 +46,6 @@ extension WikiInfoView {
 // MARK: - Preview
 struct WikiInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        WikiInfoView(urlString: "https://sr.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BD%D0%B0%D1%81%D1%82%D0%B8%D1%80_%D0%96%D0%B8%D1%87%D0%B0")
+        WikiInfoView(urlString: "https://sr.wikipedia.org/wiki/Манастир_Жича")
     }
 }

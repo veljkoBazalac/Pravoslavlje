@@ -36,20 +36,20 @@ struct FastingView: View {
 extension FastingView {
     
     // MARK: - Add Symbol Function to explain Fasting
-    private func addSymbol(color: Color, title: String, text: String) -> some View {
+    private func addSymbol(color: String, title: String, text: String) -> some View {
         VStack(alignment: .leading) {
             HStack {
                 // Rounded Rectangle with Color
                 RoundedRectangle(cornerRadius: 5)
-                    .foregroundColor(color)
+                    .foregroundColor(Color(color))
                     .frame(width: 20, height: 20)
                 // Name of Fasting Type
                 Text("- \(title)")
-                    .font(Font.custom("Clara", size: 20))
+                    .font(Font.custom(K.Fonts.clara, size: 20))
             }
             // Fasting explanation
             Text(text)
-                .font(Font.custom("Clara", size: 20))
+                .font(Font.custom(K.Fonts.clara, size: 20))
         }
     }
     
@@ -57,31 +57,31 @@ extension FastingView {
     private var textData : some View {
         VStack {
             Text(K.Fasting.Title.napomene)
-                .font(Font.custom("Clara", size: 25))
+                .font(Font.custom(K.Fonts.clara, size: 25))
             
             VStack(alignment: .leading) {
                 // Potpuni post
-                addSymbol(color: Color.green,
+                addSymbol(color: K.Colors.potpuniPost,
                           title: K.Fasting.Title.potpuniPost,
                           text: K.Fasting.Text.potpuniPost)
                 // Voda
-                addSymbol(color: Color.cyan,
+                addSymbol(color: K.Colors.voda,
                           title: K.Fasting.Title.voda,
                           text: K.Fasting.Text.voda)
                 // Vino
-                addSymbol(color: Color.red,
+                addSymbol(color: K.Colors.vino,
                           title: K.Fasting.Title.vino,
                           text: K.Fasting.Text.vino)
                 // Ulje
-                addSymbol(color: Color.yellow,
+                addSymbol(color: K.Colors.ulje,
                           title: K.Fasting.Title.ulje,
                           text: K.Fasting.Text.ulje)
                 // Riba
-                addSymbol(color: Color.brown,
+                addSymbol(color: K.Colors.riba,
                           title: K.Fasting.Title.riba,
                           text: K.Fasting.Text.riba)
                 // Beli mrs
-                addSymbol(color: Color.gray,
+                addSymbol(color: K.Colors.beliMrs,
                           title: K.Fasting.Title.beliMrs,
                           text: K.Fasting.Text.beliMrs)
             }

@@ -20,9 +20,9 @@ struct ShowEnableLocationAlert: ViewModifier {
     func body(content: Content) -> some View {
         content
             .alert(isPresented: $showAlert) {
-                Alert(title: Text("Локација блокирана."),
-                      message: Text("Потребна је Ваша локација да би апликација успешно функционисала."),
-                      dismissButton: .default(Text("Иди у опције").foregroundColor(Color.blue), action: {
+                Alert(title: Text(K.Text.Alerts.locationBlocked),
+                      message: Text(K.Text.Alerts.weNeedYourLocation),
+                      dismissButton: .default(Text(K.Text.Alerts.goToSettings).foregroundColor(Color.blue), action: {
                     // Go to Settings
                     if let bundleId = Bundle.main.bundleIdentifier,
                        let url = URL(string: "\(UIApplication.openSettingsURLString)&path=LOCATION/\(bundleId)") {

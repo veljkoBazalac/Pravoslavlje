@@ -122,16 +122,4 @@ struct ZoomGesture: UIViewRepresentable {
     }
 }
 
-// MARK: - View Extenstion
-extension View {
-    
-    func getRect() -> CGRect {
-        return UIScreen.main.bounds
-    }
-    
-    func addPinchZoom() -> some View {
-        return PinchZoomContext {
-            self
-        }
-    }
-}
+

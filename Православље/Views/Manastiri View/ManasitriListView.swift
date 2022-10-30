@@ -15,7 +15,7 @@ struct ManastiriListView: View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVStack {
                 ForEach(viewModel.eparhijeArray) { eparhija in
-                    VStack(spacing: 5) {
+                    VStack(spacing: 8) {
                         HStack {
                             Circle()
                                 .fill(viewModel.getEparhijaColor(eparhijaName: eparhija.name))
@@ -40,7 +40,7 @@ extension ManastiriListView {
     private func eparhijaName(eparhija: EparhijaEntity) -> some View {
         if let eparhija = eparhija.name {
            return Text("Eпархија \(eparhija)")
-                .font(Font.custom("CormorantSC-Bold", size: 20))
+                .font(Font.custom(K.Fonts.clara, size: 20))
         } else {
             return Text("")
         }
@@ -72,7 +72,7 @@ extension ManastiriListView {
                             // Manastir name
                             if let name = manastir.name {
                                 Text(name)
-                                    .font(Font.custom("CormorantSC-Medium", size: 15))
+                                    .font(Font.custom(K.Fonts.clara, size: 16))
                             }
                         }
                         .onTapGesture {

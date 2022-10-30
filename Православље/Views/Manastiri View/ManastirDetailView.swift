@@ -34,7 +34,7 @@ struct ManastirDetailView: View {
         .ignoresSafeArea()
         .background(.ultraThinMaterial)
         .overlay(alignment: .topLeading) {
-            dismissButton
+            ArrowDownButton()
         }
         .sheet(isPresented: $showWikiSheet) {
             WikiInfoView(urlString: manastir.link)
@@ -62,13 +62,13 @@ extension ManastirDetailView {
         VStack(alignment: .leading, spacing: 8) {
             if let manastirName = manastir.name {
                 Text(manastirName)
-                    .font(Font.custom("CormorantSC-Bold", size: 30))
+                    .font(Font.custom(K.Fonts.clara, size: 35))
                     .fontWeight(.semibold)
             }
             
             if let eparhijaName = manastir.eparhija?.name {
                 Text("Епархија \(eparhijaName)")
-                    .font(Font.custom("CormorantSC-Medium", size: 25))
+                    .font(Font.custom(K.Fonts.clara, size: 25))
                     .foregroundColor(.secondary)
             }
             
@@ -80,36 +80,18 @@ extension ManastirDetailView {
         VStack(alignment: .leading, spacing: 16) {
             if let about = manastir.about {
                 Text(about)
-                    .font(Font.custom("CormorantSC-Medium", size: 16))
+                    .font(Font.custom(K.Fonts.clara, size: 18))
                     .foregroundColor(.secondary)
             }
             
             if manastir.link != nil {
-                Text("Прочитајте више на Википедији 📚")
-                    .font(Font.custom("CormorantSC-Medium", size: 16))
+                Text(K.Text.readMore)
+                    .font(Font.custom(K.Fonts.clara, size: 18))
                     .foregroundColor(Color.blue)
                     .onTapGesture {
                         showWikiSheet = true
                     }
             }
-        }
-    }
-    
-    // MARK: - Dismiss Button
-    private var dismissButton : some View {
-        Button {
-            dismiss()
-        } label : {
-            Image(systemName: "chevron.left")
-                .rotationEffect(Angle(degrees: -90))
-                .font(.headline)
-                .padding(.vertical, 8)
-                .padding(.horizontal, 10)
-                .foregroundColor(.primary)
-                .background(.thickMaterial)
-                .cornerRadius(5)
-                .shadow(radius: 4)
-                .padding()
         }
     }
 }

@@ -13,8 +13,8 @@ final class ManastiriViewModel : NSObject, ObservableObject {
     
     let manager : CoreDataManager
     var locationManager : CLLocationManager?
-    @AppStorage("USER_LOCATION_DISABLED") var locationIsDisabled: Bool?
-    @AppStorage("NAVIGATION_APP") var navigationApp : String?
+    @AppStorage(K.AppStorage.userLocationDisabled) var locationIsDisabled: Bool?
+    @AppStorage(K.AppStorage.navigationApp) var navigationApp : String?
     
     // All Eparhije Data
     @Published var eparhijeArray : [EparhijaEntity] = []
@@ -45,7 +45,6 @@ final class ManastiriViewModel : NSObject, ObservableObject {
         manastiriArray = CoreDataManager.shared.getManastirData()
         eparhijeArray = CoreDataManager.shared.getEparhijaData()
     }
-    
 }
 
 // MARK: - Location Functions
@@ -77,13 +76,13 @@ extension ManastiriViewModel {
     // MARK: - Get Eparhija Color
     func getEparhijaColor(eparhijaName: String? = "") -> Color {
         switch eparhijaName {
-        case "жичка":
+        case K.Eparhije.zicka:
             return Color.red
-        case "ваљевска":
+        case K.Eparhije.valjevska:
             return Color.green
-        case "браничевска":
+        case K.Eparhije.branicevska:
             return Color.blue
-        case "рашко-призренска":
+        case K.Eparhije.raskoPrizrenska:
             return Color.purple
         default:
             return Color.orange
@@ -127,7 +126,7 @@ extension ManastiriViewModel {
         
         if UIApplication.shared.canOpenURL(URL(string: urlString)!) {
             UIApplication.shared.open(URL(string: urlString)!)
-            navigationApp = "Google"
+            navigationApp = K.Text.NavigationApp.google
         }
     }
     
@@ -139,7 +138,7 @@ extension ManastiriViewModel {
         
         if UIApplication.shared.canOpenURL(URL(string: urlString)!) {
             UIApplication.shared.open(URL(string: urlString)!)
-            navigationApp = "Apple"
+            navigationApp = K.Text.NavigationApp.apple
         }
     }
 }
@@ -156,7 +155,7 @@ extension ManastiriViewModel: CLLocationManagerDelegate {
             self.locationManager = CLLocationManager()
             self.locationManager?.delegate = self
         } else {
-            print("Ваша Локација је искључена. Молимо Вас да укључите локацију у опцијама.")
+            print(K.Text.Alerts.locationOff)
         }
     }
     
@@ -180,5 +179,3 @@ extension ManastiriViewModel: CLLocationManagerDelegate {
         }
     }
 }
-
-
