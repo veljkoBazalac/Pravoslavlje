@@ -97,6 +97,7 @@ struct K {
         
         static let readMore = "Прочитајте више на Википедији 📚"
         static let findMonastery = "Пронађи манастир..."
+        static let pravoslavlje = "Православље"
     }
     
     // MARK: - Colors
@@ -112,6 +113,10 @@ struct K {
         static let ulje = "Ulje"
         static let riba = "Riba"
         static let beliMrs = "BeliMrs"
+        
+        // Launch Screen logo
+        static let launchScreen1 = "LaunchScreen1"
+        static let launchScreen2 = "LaunchScreen2"
     }
     
     // MARK: - Images
@@ -123,7 +128,7 @@ struct K {
         static let eparhije = "eparhije"
         static let calendar = "calendar"
         static let map = "map.fill"
-        
+        static let logo = "logo"
         
         struct Annotations {
             static let monastery = "monastery"
@@ -140,5 +145,6 @@ struct K {
     // MARK: - Fonts
     struct Fonts {
         static let clara = "Clara"
+        static let cormorantBold = "CormorantSC-Bold"
     }
 }

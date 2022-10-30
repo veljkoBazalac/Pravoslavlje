@@ -11,6 +11,7 @@
 		D00FDD0828E839C3000AFA56 /* PravoslavljeContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D00FDD0628E839C3000AFA56 /* PravoslavljeContainer.xcdatamodeld */; };
 		D03CEF0328DD8BF100524F91 /* ManastiriView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03CEF0228DD8BF100524F91 /* ManastiriView.swift */; };
 		D03CEF0628DD8C7200524F91 /* ManastiriViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03CEF0528DD8C7200524F91 /* ManastiriViewModel.swift */; };
+		D04BD074290F1ADE00B27CB3 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04BD073290F1ADE00B27CB3 /* LaunchScreen.swift */; };
 		D0637C862892708D00C33D4E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0637C852892708D00C33D4E /* CalendarView.swift */; };
 		D0637C8E2892B56F00C33D4E /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0637C8D2892B56F00C33D4E /* CalendarCell.swift */; };
 		D09418442895500B009373CF /* PraznikView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09418432895500B009373CF /* PraznikView.swift */; };
@@ -46,6 +47,7 @@
 		D00FDD0728E839C3000AFA56 /* PravoslavljeContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PravoslavljeContainer.xcdatamodel; sourceTree = "<group>"; };
 		D03CEF0228DD8BF100524F91 /* ManastiriView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManastiriView.swift; sourceTree = "<group>"; };
 		D03CEF0528DD8C7200524F91 /* ManastiriViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManastiriViewModel.swift; sourceTree = "<group>"; };
+		D04BD073290F1ADE00B27CB3 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		D0637C852892708D00C33D4E /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		D0637C8D2892B56F00C33D4E /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		D09418432895500B009373CF /* PraznikView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraznikView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		D0A1D207288BBB0D00F029BC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D04BD073290F1ADE00B27CB3 /* LaunchScreen.swift */,
 				D0C6A65628DD904200C91E25 /* Manastiri View */,
 				D0637C842892705700C33D4E /* Kalendar Tab */,
 				D0B9628428ED774D00A378AB /* Reusable Views */,
@@ -339,6 +342,7 @@
 				D0CFA177290EF6E200A32002 /* Extensions.swift in Sources */,
 				D0C6A65828DD905B00C91E25 /* ManasitriListView.swift in Sources */,
 				D0FE582328F35C86008E3183 /* WikiInfoView.swift in Sources */,
+				D04BD074290F1ADE00B27CB3 /* LaunchScreen.swift in Sources */,
 				D0BF332E28893062005AD934 /* PravoslavljeApp.swift in Sources */,
 				D09BA79428F58D6B003715F8 /* EparhijeMapView.swift in Sources */,
 			);

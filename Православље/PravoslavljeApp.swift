@@ -14,7 +14,7 @@ struct PravoslavljeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ManastiriView()
+            LaunchScreen()
                 .environmentObject(manastirViewModel)
                 .environmentObject(calendarViewModel)
                 .onAppear {
